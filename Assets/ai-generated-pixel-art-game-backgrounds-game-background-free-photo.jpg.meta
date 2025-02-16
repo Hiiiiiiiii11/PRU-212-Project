@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1d168fccec26af845b8d4c6165701fab
+guid: a6d30d6aa5401994ca9e93972b4b1dc8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5391845113604912300
-    second: Download-Free-Horizontal-2D-Game-Backgrounds_0
+      213: 5942796192960403291
+    second: ai-generated-pixel-art-game-backgrounds-game-background-free-photo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Download-Free-Horizontal-2D-Game-Backgrounds_0
+      name: ai-generated-pixel-art-game-backgrounds-game-background-free-photo_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 300
+        y: 0
+        width: 357
         height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca4b858409ea3da40800000000000000
-      internalID: 5391845113604912300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Download-Free-Horizontal-2D-Game-Backgrounds_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 200
-        width: 300
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96330fa2148a6a046bd03c696f8a5c81
-      internalID: -356222852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Download-Free-Horizontal-2D-Game-Backgrounds_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 300
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a22e4abfc98712545add48093a49b09e
-      internalID: 1992130564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Download-Free-Horizontal-2D-Game-Backgrounds_3
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 300
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d23cfd910b5201f4f9121b40551d867b
-      internalID: 170485671
+      spriteID: b57d2f5b6ad097250800000000000000
+      internalID: 5942796192960403291
       vertices: []
       indices: 
       edges: []
@@ -191,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4badd930eee73e44b99ad85aed8aae4b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -200,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Download-Free-Horizontal-2D-Game-Backgrounds_0: 5391845113604912300
-      Download-Free-Horizontal-2D-Game-Backgrounds_1: -356222852
-      Download-Free-Horizontal-2D-Game-Backgrounds_2: 1992130564
-      Download-Free-Horizontal-2D-Game-Backgrounds_3: 170485671
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
