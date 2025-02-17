@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 public class Script : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private float JumpForce = 15f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -22,6 +22,24 @@ public class Script : MonoBehaviour
     private Rigidbody2D rb;
     private bool isTouchingWall; // Kiểm tra trạng thái tiếp xúc với tường
     private bool isWallClinging;
+    private bool isDead = false;
+    private bool isTrapped = false;
+    private float originalSpeed;
+
+    public void SetDead()
+    {
+        isDead = true;
+        moveSpeed = 0;
+        rb.linearVelocity = Vector2.zero; // Dừng mọi di chuyển
+    }
+    public void isTrap()
+    {
+        isTrapped = true;
+        moveSpeed = 0; // Ngăn di chuyển
+        rb.linearVelocity = Vector2.zero;
+        animator.SetTrigger("Trapclose");
+
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +47,7 @@ public class Script : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        originalSpeed = moveSpeed;
     }
     void Start()
     {
@@ -38,7 +57,16 @@ public class Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleMovement();
+        if (isTrapped && Input.GetKeyDown(KeyCode.E)) // Press "E" to escape trap
+        {
+            isTrapped = false;
+            moveSpeed = originalSpeed;
+        }
+        if (!isTrapped)
+        {
+            HandleMovement();
+        }
+
         HandleJump();
         UpdateAnimation();
         HandleClingWall();
@@ -47,7 +75,11 @@ public class Script : MonoBehaviour
             HanldeAttack();
         }
         HanldeDash();
+
+
     }
+
+
     private void HandleMovement()
     {
         // Nếu không bám tường mới cho phép di chuyển
@@ -59,11 +91,13 @@ public class Script : MonoBehaviour
             // Interpolate velocity for smooth acceleration and deceleration
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, 0.1f);
 
-            // Flip the character's direction based on movement
-            if (moveInput > 0)
-                transform.localScale = new Vector3(1, 1, 1);
-            else if (moveInput < 0)
-                transform.localScale = new Vector3(-1, 1, 1);
+            if (!isDead) // Chỉ đổi hướng nếu nhân vật chưa chết
+            {
+                if (moveInput > 0)
+                    transform.localScale = new Vector3(1, 1, 1);
+                else if (moveInput < 0)
+                    transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
     }
 

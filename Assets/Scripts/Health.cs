@@ -24,8 +24,9 @@ public class Health : MonoBehaviour
         {
             if (!dead)
             {
+                animator.SetTrigger("PlayerHurt");
                 animator.SetTrigger("PlayerDeath");
-                GetComponent<PlayerMovement>().enabled = false;
+                GetComponent<Script>().SetDead(); // Gọi hàm SetDead() trong Script.cs
                 dead = true;
             }
 

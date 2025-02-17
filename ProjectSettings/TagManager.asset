@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - 
+  - ground2
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2974918533
+    locked: 0
+  - name: Trap
+    uniqueID: 3104111939
     locked: 0
   - name: Decorate
     uniqueID: 3584512559
