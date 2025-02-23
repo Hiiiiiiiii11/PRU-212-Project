@@ -15,10 +15,10 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - ground2
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerHitBox
+  - EnemyHitBox
   - 
   - 
   - 

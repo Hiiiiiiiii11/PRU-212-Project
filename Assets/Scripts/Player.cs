@@ -1,8 +1,9 @@
+using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class Script : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private float JumpForce = 15f;
@@ -30,7 +31,8 @@ public class Script : MonoBehaviour
     {
         isDead = true;
         moveSpeed = 0;
-        rb.linearVelocity = Vector2.zero; // Dừng mọi di chuyển
+        rb.linearVelocity = Vector2.zero;
+        // Dừng mọi di chuyển
     }
     public void isTrap()
     {
@@ -83,7 +85,7 @@ public class Script : MonoBehaviour
     private void HandleMovement()
     {
         // Nếu không bám tường mới cho phép di chuyển
-        if (!isWallClinging)
+        if (!isWallClinging || !isDead || !isTrapped)
         {
             float moveInput = Input.GetAxisRaw("Horizontal"); // Sử dụng Input.GetAxisRaw để có phản hồi tức thì
             Vector2 targetVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
@@ -99,12 +101,18 @@ public class Script : MonoBehaviour
                     transform.localScale = new Vector3(-1, 1, 1);
             }
         }
+        else
+        {
+            return;
+        }
     }
 
 
 
     private void HandleJump()
     {
+        if (isDead || isTrapped)
+            return;
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
