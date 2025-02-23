@@ -18,7 +18,7 @@ public class Trap : MonoBehaviour
         {
             collision.GetComponent<Health>().TakeDamage(damage);
             animator.SetTrigger("Trapclose"); // Trigger trap close animation
-            Script player = collision.GetComponent<Script>();
+            Player player = collision.GetComponent<Player>();
             if (player != null)
             {
                 player.isTrap(); // Lock player's movement (trap triggered)
