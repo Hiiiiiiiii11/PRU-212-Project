@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
             {
                 animator.SetTrigger("PlayerHurt");
                 animator.SetTrigger("PlayerDeath");
-                GetComponent<Script>().SetDead(); // Gọi hàm SetDead() trong Script.cs
+                GetComponent<Player>().SetDead(); // Gọi hàm SetDead() trong Script.cs
                 dead = true;
             }
 
