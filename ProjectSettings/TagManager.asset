@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Wall
+  - Boss
+  - Chest
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Player
+  - Enemy
+  - PlayerHitBox
+  - EnemyHitBox
+  - GroudDetection
+  - Trap
+  - WallCheck
+  - Pickup
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 59974847
+    locked: 0
+  - name: Forgeground
+    uniqueID: 2412476171
+    locked: 0
+  - name: Ground
+    uniqueID: 665502285
+    locked: 0
+  - name: Trap
+    uniqueID: 1906180131
+    locked: 0
+  - name: Platform
+    uniqueID: 3942096297
+    locked: 0
+  - name: Enemy
+    uniqueID: 2788641773
+    locked: 0
+  - name: Item
+    uniqueID: 1580858135
+    locked: 0
+  - name: Player
+    uniqueID: 4011230213
+    locked: 0
+  m_RenderingLayers:
+  - Default
