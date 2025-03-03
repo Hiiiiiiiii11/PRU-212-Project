@@ -173,6 +173,9 @@ MonoBehaviour:
   damageableHit:
     m_PersistentCalls:
       m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 40
   _health: 40
   isInvincible: 0
