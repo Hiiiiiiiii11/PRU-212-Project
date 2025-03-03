@@ -1,7 +1,7 @@
-using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
+
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
+
+
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +17,10 @@ public class Player : MonoBehaviour
     private int lastAttackType = -1;
     public float attackCooldown = 0.5f; // Thời gian chờ giữa các lần tấn công
     private float lastAttackTime;
-    public float DashCooldown = 0;
+    public float DashCooldown = 0.5f;
+    [SerializeField] private float attackDamage = 1; // Sát thương mỗi đòn đánh
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private GameObject playerHitBox;
 
     private bool isGrounded;
     private Rigidbody2D rb;
@@ -27,12 +30,24 @@ public class Player : MonoBehaviour
     private bool isTrapped = false;
     private float originalSpeed;
 
+    [System.Obsolete]
     public void SetDead()
     {
         isDead = true;
         moveSpeed = 0;
         rb.linearVelocity = Vector2.zero;
-        // Dừng mọi di chuyển
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        Invoke(nameof(DelayedGameOver), 2.5f);
+    }
+
+    [System.Obsolete]
+    private void DelayedGameOver()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameManager != null)
+        {
+            gameManager.GameOver();
+        }
     }
     public void isTrap()
     {
@@ -53,16 +68,19 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-
+        playerHitBox.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isTrapped && Input.GetKeyDown(KeyCode.E)) // Press "E" to escape trap
+        if (!isDead)
         {
-            isTrapped = false;
-            moveSpeed = originalSpeed;
+            if (isTrapped && Input.GetKeyDown(KeyCode.E)) // Press "E" to escape trap
+            {
+                isTrapped = false;
+                moveSpeed = originalSpeed;
+            }
         }
         if (!isTrapped)
         {
@@ -74,7 +92,7 @@ public class Player : MonoBehaviour
         HandleClingWall();
         if (Input.GetMouseButtonDown(0) && Time.time >= lastAttackTime + attackCooldown)
         {
-            HanldeAttack();
+            HandleAttack();
         }
         HanldeDash();
 
@@ -84,28 +102,20 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        // Nếu không bám tường mới cho phép di chuyển
-        if (!isWallClinging || !isDead || !isTrapped)
-        {
-            float moveInput = Input.GetAxisRaw("Horizontal"); // Sử dụng Input.GetAxisRaw để có phản hồi tức thì
-            Vector2 targetVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-            // Interpolate velocity for smooth acceleration and deceleration
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, 0.1f);
-
-            if (!isDead) // Chỉ đổi hướng nếu nhân vật chưa chết
-            {
-                if (moveInput > 0)
-                    transform.localScale = new Vector3(1, 1, 1);
-                else if (moveInput < 0)
-                    transform.localScale = new Vector3(-1, 1, 1);
-            }
-        }
-        else
-        {
+        if (isWallClinging || isDead || isTrapped)
             return;
-        }
+
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        Vector2 targetVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, 0.1f);
+
+        if (moveInput > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (moveInput < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
     }
+
 
 
 
@@ -126,53 +136,42 @@ public class Player : MonoBehaviour
     }
     private void HandleClingWall()
     {
-        // Kiểm tra tiếp xúc với tường và mặt đất
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, wallLayer);
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.4f, groundLayer);
 
-        // Nếu tiếp xúc với tường và không ở trên mặt đất
         if (isTouchingWall && !isGrounded)
         {
-            isWallClinging = true; // Chuyển sang trạng thái bám tường
-            rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động
-            rb.gravityScale = 0.2f; // Vô hiệu hóa trọng lực
-            animator.SetBool("isClinging", true); // Cập nhật trạng thái trong Animator
+            isWallClinging = true;
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y * 0.1f); // Giảm tốc độ rơi
 
+            rb.gravityScale = 0; // Dừng rơi
+            animator.SetBool("isClinging", true);
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                float jumpDirection = Input.GetAxisRaw("Horizontal"); // -1 (A), 1 (D), 0 (không nhấn)
+                if (jumpDirection == 0)
+                {
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector2(jumpDirection * moveSpeed, JumpForce); // Nhảy theo hướng
+                }
+
+                isWallClinging = false; // Thoát bám tường
+                rb.gravityScale = 3; // Khôi phục trọng lực
+                animator.SetBool("isClinging", false);
+            }
         }
-        else if (!isTouchingWall || isGrounded) // Thoát trạng thái bám tường khi chạm đất hoặc rời khỏi tường
+        else
         {
             isWallClinging = false;
-            rb.gravityScale = 3; // Khôi phục trọng lực
-            animator.SetBool("isClinging", false); // Cập nhật trạng thái trong Animator
-        }
-
-        // Nhảy khỏi tường nếu đang bám và nhấn Jump
-        if (isWallClinging && Input.GetButtonDown("Jump"))
-        {
-            float moveInput = Input.GetAxisRaw("Horizontal"); // Lấy hướng di chuyển từ phím mũi tên hoặc A/D
-            Vector2 jumpDirection;
-
-            if (moveInput == 0) // Nếu không có hướng di chuyển
-            {
-                // Không thực hiện nhảy, chỉ dừng logic tại đây
-                return;
-            }
-            else // Nhảy theo hướng trái hoặc phải nếu nhấn phím di chuyển
-            {
-                jumpDirection = new Vector2(moveInput, 1).normalized;
-
-                // Kết hợp nhảy ngang và nhảy dọc
-            }
-
-            // Áp dụng lực nhảy
-            rb.linearVelocity = jumpDirection * JumpForce * 1.5f;
-
-            // Thoát trạng thái bám tường
-            isWallClinging = false;
-            rb.gravityScale = 3; // Khôi phục trọng lực
-            animator.SetBool("isClinging", false); // Cập nhật trạng thái trong Animator
+            rb.gravityScale = 3;
+            animator.SetBool("isClinging", false);
         }
     }
+
+
 
 
 
@@ -184,29 +183,38 @@ public class Player : MonoBehaviour
         animator.SetBool("isJumping", isJumping);
     }
 
-    private void HanldeAttack()
+    private void HandleAttack()
     {
-        // Lấy trạng thái hiện tại của animation
+        // Kiểm tra nếu đang tấn công thì không thực hiện tiếp
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 0.9f) return;
 
-        // Chỉ cho phép tấn công tiếp theo nếu animation hiện tại không phải "Attack" hoặc đã gần kết thúc
-        if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 0.9f)
+        // Chọn kiểu tấn công mới nhưng không được trùng quá 2 lần liên tiếp
+        int attackType;
+        do
         {
-            return;
-        }
+            attackType = Random.Range(1, 4); // Random từ 1 đến 3
+        } while (attackType == lastAttackType);
 
-        // Chọn kiểu tấn công mới không trùng với lần trước
-        int attackType = (lastAttackType + Random.Range(1, 3)) % 3 + 1;
-
-
-        // Gán kiểu tấn công mới
         animator.SetInteger("AttackType", attackType);
-        lastAttackType = attackType; // Cập nhật kiểu tấn công cuối cùng
+        lastAttackType = attackType;
 
-        // Đánh dấu thời điểm tấn công và kích hoạt trigger
         lastAttackTime = Time.time;
         animator.SetTrigger("isAttacking");
+
+        // Bật Hitbox khi tấn công
+        playerHitBox.SetActive(true);
+
+        // Tắt Hitbox sau một khoảng thời gian (để tránh gây damage liên tục)
+        Invoke(nameof(DisableHitbox), 0.5f);
     }
+
+
+    private void DisableHitbox()
+    {
+        playerHitBox.SetActive(false);
+    }
+
 
     private void HanldeDash()
     {
@@ -219,6 +227,34 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Dash");
         }
     }
+
+    // void DamageEnemy()
+    // {
+    //     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 2f);
+    //     foreach (Collider2D enemy in hitEnemies)
+    //     {
+    //         if (enemy.CompareTag("Enemy"))
+    //         {
+    //             // Kiểm tra xem enemy là loại nào và gọi TakeDamage()
+    //             Skeleton skeleton = enemy.GetComponent<Skeleton>();
+    //             if (skeleton != null) skeleton.TakeDamage(1);
+
+    //             Eyefly eyeFly = enemy.GetComponent<Eyefly>();
+    //             if (eyeFly != null) eyeFly.TakeDamage(1);
+
+    //             Goblin goblin = enemy.GetComponent<Goblin>();
+    //             if (goblin != null) goblin.TakeDamage(1);
+
+    //             Mushroom mushroom = enemy.GetComponent<Mushroom>();
+    //             if (mushroom != null) mushroom.TakeDamage(1);
+    //         }
+    //     }
+    // }
+
+
+
+
+
 
 }
 
