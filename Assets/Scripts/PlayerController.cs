@@ -93,7 +93,13 @@ public class PlayerController : MonoBehaviour
 	{
 		HandleWallSlide();
 
-		if (!damageable.IsAlive) uiManager.GameOver();
+		if (!damageable.IsAlive) StartCoroutine(ShowGameOver());
+	}
+
+	private IEnumerator ShowGameOver()
+	{
+		yield return new WaitForSeconds(2f);
+		uiManager.GameOver();
 	}
 
 	private void FixedUpdate()

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -80,12 +81,14 @@ namespace Assets.Scripts
 		public void GameOver()
 		{
 			isGameOver = true;
+			Time.timeScale = 0;
 			gameOverUI.SetActive(true);
 		}
 
 		public void GameWin()
 		{
 			isGameWin = true;
+			Time.timeScale = 0;
 			gameWinUI.SetActive(true);
 		}
 
@@ -98,7 +101,7 @@ namespace Assets.Scripts
 		{
 			isGameOver = false;
 			isGameWin = false;
-
+			Time.timeScale = 1;
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
