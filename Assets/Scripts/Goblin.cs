@@ -18,6 +18,7 @@ public class Goblin : MonoBehaviour
     private Rigidbody2D rb;
     private bool movingRight = true;
     private bool isAttacking = false;
+    private bool isHurt = false; // Trạng thái bị thương
 
     private float leftLimit;
     private float rightLimit;
@@ -31,7 +32,7 @@ public class Goblin : MonoBehaviour
 
     [Header("Hitbox Attack")]
     public GameObject attackHitbox;
-
+    private Audio audio;
 
     public bool HasTarget
     {
@@ -42,6 +43,10 @@ public class Goblin : MonoBehaviour
             {
                 hasTarget = value;
                 animator.SetBool("hasTarget", hasTarget);
+                if (!hasTarget)
+                {
+                    CancelAttack();
+                }
             }
         }
     }
@@ -52,10 +57,10 @@ public class Goblin : MonoBehaviour
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentHealth = startingHealth;
+        audio = FindAnyObjectByType<Audio>();
 
         leftLimit = transform.position.x - leftDistance;
         rightLimit = transform.position.x + rightDistance;
-
 
         // Ẩn hitbox ban đầu
         attackHitbox.SetActive(false);
@@ -63,6 +68,8 @@ public class Goblin : MonoBehaviour
 
     void Update()
     {
+        if (isHurt || isDead) return; // Nếu đang bị thương hoặc đã chết, không làm gì cả
+
         HasTarget = AttackZone.detectedColliders.Exists(c => c.CompareTag("Player"));
 
         if (HasTarget && !isAttacking)
@@ -73,6 +80,8 @@ public class Goblin : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isHurt || isDead) return; // Không di chuyển khi đang bị thương hoặc đã chết
+
         bool isGrounded = Physics2D.OverlapCircle(groundCheckEnemy.position, groundCheckRadius, groundLayer);
         if (!isGrounded) return;
 
@@ -83,55 +92,55 @@ public class Goblin : MonoBehaviour
 
     void Move()
     {
-        Vector2 currentPos = transform.position;
+        if (!hasTarget)
+        {
+            walkSpeed = 2f;
+            Vector2 currentPos = transform.position;
 
-        if (movingRight)
-        {
-            rb.linearVelocity = new Vector2(walkSpeed, rb.linearVelocity.y);
-            if (currentPos.x >= rightLimit)
+            if (movingRight)
             {
-                movingRight = false;
-                Flip();
+                rb.linearVelocity = new Vector2(walkSpeed, rb.linearVelocity.y);
+                if (currentPos.x >= rightLimit)
+                {
+                    movingRight = false;
+                    Flip();
+                }
             }
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(-walkSpeed, rb.linearVelocity.y);
-            if (currentPos.x <= leftLimit)
+            else
             {
-                movingRight = true;
-                Flip();
+                rb.linearVelocity = new Vector2(-walkSpeed, rb.linearVelocity.y);
+                if (currentPos.x <= leftLimit)
+                {
+                    movingRight = true;
+                    Flip();
+                }
             }
         }
     }
 
     void Attack()
     {
-        if (isAttacking) return;
+        if (isAttacking || isHurt) return; // Không tấn công khi đang bị thương
 
         isAttacking = true;
         animator.SetBool("isAttack", true);
+        rb.linearVelocity = Vector2.zero; // Dừng di chuyển khi tấn công
+    }
 
-        // Dừng di chuyển
-        rb.linearVelocity = Vector2.zero;
+    private void AttackAudio()
+    {
+        audio.PlayAttackSword1();
+    }
 
-        // Bật hitbox khi animation bắt đầu
-        Invoke("EnableHitbox", 0.45f); // Chờ 0.2s trước khi bật hitbox để khớp với animation
-        Invoke("ResetAttack", 1f);
+    private void DeadAudio()
+    {
+        audio.PlayMonsterDead();
     }
 
     void ResetAttack()
     {
         isAttacking = false;
         animator.SetBool("isAttack", false);
-
-        // Tắt hitbox khi animation kết thúc
-        DisableHitbox();
-
-        if (!HasTarget)
-        {
-            walkSpeed = 2f;
-        }
     }
 
     void Flip()
@@ -141,14 +150,11 @@ public class Goblin : MonoBehaviour
         transform.localScale = scale;
     }
 
-    // 👉 Khi animation bắt đầu, mở hitbox
     public void EnableHitbox()
     {
         attackHitbox.SetActive(true);
-
     }
 
-    // 👉 Khi animation kết thúc, đóng hitbox
     public void DisableHitbox()
     {
         attackHitbox.SetActive(false);
@@ -156,37 +162,50 @@ public class Goblin : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        if (isDead) return;
+        if (isDead || isHurt) return; // Không nhận sát thương khi đã chết hoặc đang bị thương
 
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-
-        CancelAttack();
+        walkSpeed = 2f;
 
         if (currentHealth > 0)
         {
+            isHurt = true; // Đánh dấu là đang bị thương
             animator.SetTrigger("isHurt");
+            CancelAttack();
+
+            // Gọi hàm ResetHurt sau 0.5s để kết thúc trạng thái bị thương
+            Invoke(nameof(ResetHurt), 0.5f);
         }
         else
         {
-            animator.SetTrigger("isHurt");
+
             Die();
         }
+    }
+    private void TouchEnemy()
+    {
+        audio.AttackOnEnemy();
+    }
+
+    void ResetHurt()
+    {
+        isHurt = false;
     }
 
     void CancelAttack()
     {
         isAttacking = false;
         animator.SetBool("isAttack", false);
-        walkSpeed = 2f;
     }
 
     private void Die()
     {
         if (isDead) return;
-
+        animator.SetTrigger("isHurt");
         isDead = true;
         animator.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
         rb.simulated = false;
     }
 }
+

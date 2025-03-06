@@ -4,11 +4,13 @@ public class Trap : MonoBehaviour
 {
     [SerializeField] private float damage;
     private Animator animator;
-    private bool isTrapClosed = false;  // Flag to track if the trap is closed
+    private bool isTrapClosed = false;
+    private Audio audio;  // Flag to track if the trap is closed
 
     private void Awake()
     {
-        animator = GetComponent<Animator>(); // Get the Animator of the Trap
+        animator = GetComponent<Animator>();
+        audio = FindAnyObjectByType<Audio>(); // Get the Animator of the Trap
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,6 +19,8 @@ public class Trap : MonoBehaviour
         if (!isTrapClosed && collision.CompareTag("Player"))
         {
             collision.GetComponent<Health>().TakeDamage(damage);
+            audio.PlayTrapClose();
+            audio.PlayPlayerHurt();
             animator.SetTrigger("Trapclose"); // Trigger trap close animation
             Player player = collision.GetComponent<Player>();
             if (player != null)

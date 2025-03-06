@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class PlayerHitbox : MonoBehaviour
+public class PlayerHitBox : MonoBehaviour
 {
-    [SerializeField] private float attackDamage = 1;
+    [SerializeField] private float damage = 1f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")) // Kiểm tra nếu va chạm với kẻ địch
         {
-            if (collision.TryGetComponent(out Skeleton skeleton)) skeleton.TakeDamage(attackDamage);
-            if (collision.TryGetComponent(out Eyefly eyeFly)) eyeFly.TakeDamage(attackDamage);
-            if (collision.TryGetComponent(out Goblin goblin)) goblin.TakeDamage(attackDamage);
-            if (collision.TryGetComponent(out Mushroom mushroom)) mushroom.TakeDamage(attackDamage);
+            other.GetComponent<Skeleton>()?.TakeDamage(damage);
+            other.GetComponent<Goblin>()?.TakeDamage(damage);
+            other.GetComponent<Eyefly>()?.TakeDamage(damage);
+            other.GetComponent<Mushroom>()?.TakeDamage(damage);
         }
     }
 }

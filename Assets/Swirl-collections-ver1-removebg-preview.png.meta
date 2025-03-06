@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: 55abb9c322deea3488434de3b1d4f821
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2765249909489985563
+    second: Swirl-collections-ver1-removebg-preview_0
+  - first:
+      213: 6395259200318941742
+    second: Swirl-collections-ver1-removebg-preview_1
+  - first:
+      213: -7529103946750806310
+    second: Swirl-collections-ver1-removebg-preview_2
+  - first:
+      213: 3046247675357781567
+    second: Swirl-collections-ver1-removebg-preview_3
+  - first:
+      213: -8636406075510736010
+    second: Swirl-collections-ver1-removebg-preview_4
+  - first:
+      213: 1563242497665513288
+    second: Swirl-collections-ver1-removebg-preview_5
+  - first:
+      213: -7052914910299616043
+    second: Swirl-collections-ver1-removebg-preview_6
+  - first:
+      213: -3467648573018756083
+    second: Swirl-collections-ver1-removebg-preview_7
+  - first:
+      213: -4206766507087478397
+    second: Swirl-collections-ver1-removebg-preview_8
+  - first:
+      213: 2918984994598189658
+    second: Swirl-collections-ver1-removebg-preview_9
+  - first:
+      213: 8430361564453593891
+    second: Swirl-collections-ver1-removebg-preview_10
+  - first:
+      213: 3251431778296421978
+    second: Swirl-collections-ver1-removebg-preview_11
+  - first:
+      213: -2003206072289286487
+    second: Swirl-collections-ver1-removebg-preview_12
+  - first:
+      213: 7991601104009593571
+    second: Swirl-collections-ver1-removebg-preview_13
+  - first:
+      213: -497675648972124736
+    second: Swirl-collections-ver1-removebg-preview_14
+  - first:
+      213: -2790183048915044994
+    second: Swirl-collections-ver1-removebg-preview_15
+  - first:
+      213: 1548002252774925338
+    second: Swirl-collections-ver1-removebg-preview_16
+  - first:
+      213: -121583479371014461
+    second: Swirl-collections-ver1-removebg-preview_17
+  - first:
+      213: -7829223770802993775
+    second: Swirl-collections-ver1-removebg-preview_18
+  - first:
+      213: -3939175472408328261
+    second: Swirl-collections-ver1-removebg-preview_19
+  - first:
+      213: 8664084810587963198
+    second: Swirl-collections-ver1-removebg-preview_20
+  - first:
+      213: 4571060157429020850
+    second: Swirl-collections-ver1-removebg-preview_21
+  - first:
+      213: -1975267080844158335
+    second: Swirl-collections-ver1-removebg-preview_22
+  - first:
+      213: 4706059448950992893
+    second: Swirl-collections-ver1-removebg-preview_23
+  - first:
+      213: -1353240239283041338
+    second: Swirl-collections-ver1-removebg-preview_24
+  - first:
+      213: -7186799887772144884
+    second: Swirl-collections-ver1-removebg-preview_25
+  - first:
+      213: 3902536194374479273
+    second: Swirl-collections-ver1-removebg-preview_26
+  - first:
+      213: 5178525117290154797
+    second: Swirl-collections-ver1-removebg-preview_27
+  - first:
+      213: -2840725005970826779
+    second: Swirl-collections-ver1-removebg-preview_28
+  - first:
+      213: -2838513106234914713
+    second: Swirl-collections-ver1-removebg-preview_29
+  - first:
+      213: 4295021922219135547
+    second: Swirl-collections-ver1-removebg-preview_30
+  - first:
+      213: -4561692509127474120
+    second: Swirl-collections-ver1-removebg-preview_31
+  - first:
+      213: 476734384265909981
+    second: Swirl-collections-ver1-removebg-preview_32
+  - first:
+      213: -5708001131504914287
+    second: Swirl-collections-ver1-removebg-preview_33
+  - first:
+      213: 5123116231919389129
+    second: Swirl-collections-ver1-removebg-preview_34
+  - first:
+      213: 8842112575945983341
+    second: Swirl-collections-ver1-removebg-preview_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 245
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18e45a4424206620800000000000000
+      internalID: 2765249909489985563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a2f81fb5680c850800000000000000
+      internalID: 6395259200318941742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 246
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad63de0f9df338790800000000000000
+      internalID: -7529103946750806310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 244
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e5f8bfe12764a20800000000000000
+      internalID: 3046247675357781567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 243
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b38259e62552880800000000000000
+      internalID: -8636406075510736010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 243
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847b52be4c0c1b510800000000000000
+      internalID: 1563242497665513288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 243
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc098cc1430f1e90800000000000000
+      internalID: -7052914910299616043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 246
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ca357ceff60efc0800000000000000
+      internalID: -3467648573018756083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 249
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3814a0476209e95c0800000000000000
+      internalID: -4206766507087478397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 170
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a78bb1361528820800000000000000
+      internalID: 2918984994598189658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 168
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323ec594d29aef470800000000000000
+      internalID: 8430361564453593891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 166
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e56ccb9f76f1d20800000000000000
+      internalID: 3251431778296421978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 166
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a6aa41d0be2334e0800000000000000
+      internalID: -2003206072289286487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 164
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e28c1fdcded7ee60800000000000000
+      internalID: 7991601104009593571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 163
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd87a152a6e719f0800000000000000
+      internalID: -497675648972124736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 168
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e753a1fcc474749d0800000000000000
+      internalID: -2790183048915044994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 172
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a146724e8db9b7510800000000000000
+      internalID: 1548002252774925338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 171
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ced88d387c005ef0800000000000000
+      internalID: -121583479371014461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 98
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1954e322672095390800000000000000
+      internalID: -7829223770802993775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 95
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb78b2b47cc3559c0800000000000000
+      internalID: -3939175472408328261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 91
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ff3fe1b330d3870800000000000000
+      internalID: 8664084810587963198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 94
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b87f72aefaaf6f30800000000000000
+      internalID: 4571060157429020850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 94
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ad2cd2e017694e0800000000000000
+      internalID: -1975267080844158335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 91
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff289292284f4140800000000000000
+      internalID: 4706059448950992893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 93
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb05c11c23583de0800000000000000
+      internalID: -1353240239283041338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 95
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b2681549b534c90800000000000000
+      internalID: -7186799887772144884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 92
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adabc40ef7982630800000000000000
+      internalID: 3902536194374479273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 21
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b848c3821ddd740800000000000000
+      internalID: 5178525117290154797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 22
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e91a8a68a7b398d0800000000000000
+      internalID: -2840725005970826779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 22
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768c3947e539b98d0800000000000000
+      internalID: -2838513106234914713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 23
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b321368aeabfa9b30800000000000000
+      internalID: 4295021922219135547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 23
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83485e2f4dc91b0c0800000000000000
+      internalID: -4561692509127474120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 23
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6526a8563bd9600800000000000000
+      internalID: 476734384265909981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 22
+        width: 53
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1903f13963b19c0b0800000000000000
+      internalID: -5708001131504914287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 22
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9c79ac117f81740800000000000000
+      internalID: 5123116231919389129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swirl-collections-ver1-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 21
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6546415a8e75ba70800000000000000
+      internalID: 8842112575945983341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c82f9c4560817f240ab79ca0e68caa73
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Swirl-collections-ver1-removebg-preview_0: 2765249909489985563
+      Swirl-collections-ver1-removebg-preview_1: 6395259200318941742
+      Swirl-collections-ver1-removebg-preview_10: 8430361564453593891
+      Swirl-collections-ver1-removebg-preview_11: 3251431778296421978
+      Swirl-collections-ver1-removebg-preview_12: -2003206072289286487
+      Swirl-collections-ver1-removebg-preview_13: 7991601104009593571
+      Swirl-collections-ver1-removebg-preview_14: -497675648972124736
+      Swirl-collections-ver1-removebg-preview_15: -2790183048915044994
+      Swirl-collections-ver1-removebg-preview_16: 1548002252774925338
+      Swirl-collections-ver1-removebg-preview_17: -121583479371014461
+      Swirl-collections-ver1-removebg-preview_18: -7829223770802993775
+      Swirl-collections-ver1-removebg-preview_19: -3939175472408328261
+      Swirl-collections-ver1-removebg-preview_2: -7529103946750806310
+      Swirl-collections-ver1-removebg-preview_20: 8664084810587963198
+      Swirl-collections-ver1-removebg-preview_21: 4571060157429020850
+      Swirl-collections-ver1-removebg-preview_22: -1975267080844158335
+      Swirl-collections-ver1-removebg-preview_23: 4706059448950992893
+      Swirl-collections-ver1-removebg-preview_24: -1353240239283041338
+      Swirl-collections-ver1-removebg-preview_25: -7186799887772144884
+      Swirl-collections-ver1-removebg-preview_26: 3902536194374479273
+      Swirl-collections-ver1-removebg-preview_27: 5178525117290154797
+      Swirl-collections-ver1-removebg-preview_28: -2840725005970826779
+      Swirl-collections-ver1-removebg-preview_29: -2838513106234914713
+      Swirl-collections-ver1-removebg-preview_3: 3046247675357781567
+      Swirl-collections-ver1-removebg-preview_30: 4295021922219135547
+      Swirl-collections-ver1-removebg-preview_31: -4561692509127474120
+      Swirl-collections-ver1-removebg-preview_32: 476734384265909981
+      Swirl-collections-ver1-removebg-preview_33: -5708001131504914287
+      Swirl-collections-ver1-removebg-preview_34: 5123116231919389129
+      Swirl-collections-ver1-removebg-preview_35: 8842112575945983341
+      Swirl-collections-ver1-removebg-preview_4: -8636406075510736010
+      Swirl-collections-ver1-removebg-preview_5: 1563242497665513288
+      Swirl-collections-ver1-removebg-preview_6: -7052914910299616043
+      Swirl-collections-ver1-removebg-preview_7: -3467648573018756083
+      Swirl-collections-ver1-removebg-preview_8: -4206766507087478397
+      Swirl-collections-ver1-removebg-preview_9: 2918984994598189658
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

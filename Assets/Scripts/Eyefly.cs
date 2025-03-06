@@ -10,7 +10,8 @@ public class Eyefly : MonoBehaviour
     private bool isDead = false;
     public float walkSpeed = 2f;      // Tốc độ di chuyển của enemy
     public float leftDistance = 3f;   // Khoảng cách tối đa di chuyển sang trái
-    public float rightDistance = 3f;  // Khoảng cách tối đa di chuyển sang phải
+    public float rightDistance = 3f;
+    private bool isHurt = false;  // Khoảng cách tối đa di chuyển sang phải
 
     [Header("Ground Check")]
     public Transform groundCheckEnemy;
@@ -29,6 +30,9 @@ public class Eyefly : MonoBehaviour
     public GameObject attackHitbox;
 
     private bool hasTarget = false;
+    private Audio audio;
+    private bool hurt = false;
+
     public bool HasTarget
     {
         get { return hasTarget; }
@@ -38,10 +42,7 @@ public class Eyefly : MonoBehaviour
             {
                 hasTarget = value;
                 animator.SetBool("hasTarget", hasTarget);
-                if (!hasTarget)
-                {
-                    // CancelAttack();
-                }
+
             }
         }
     }
@@ -54,10 +55,15 @@ public class Eyefly : MonoBehaviour
         currentHealth = startingHealth;
         leftLimit = transform.position.x - leftDistance;
         rightLimit = transform.position.x + rightDistance;
+        audio = FindAnyObjectByType<Audio>();
+
+        attackHitbox.SetActive(false);
+
     }
 
     void Update()
     {
+        if (isHurt || isDead) return;
         HasTarget = AttackZone.detectedColliders.Exists(c => c.CompareTag("Player"));
 
         if (HasTarget && !isAttacking)
@@ -68,7 +74,7 @@ public class Eyefly : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        if (isHurt || isDead) return;
 
         if (isAttacking || HasTarget) return; // Nếu đang tấn công hoặc có mục tiêu, không di chuyển
 
@@ -77,31 +83,34 @@ public class Eyefly : MonoBehaviour
 
     void Move()
     {
-        Vector2 currentPos = transform.position;
+        if (!hasTarget)
+        {
+            Vector2 currentPos = transform.position;
 
-        if (movingRight)
-        {
-            rb.linearVelocity = new Vector2(walkSpeed, rb.linearVelocity.y);
-            if (currentPos.x >= rightLimit)
+            if (movingRight)
             {
-                movingRight = false;
-                Flip();
+                rb.linearVelocity = new Vector2(walkSpeed, rb.linearVelocity.y);
+                if (currentPos.x >= rightLimit)
+                {
+                    movingRight = false;
+                    Flip();
+                }
             }
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(-walkSpeed, rb.linearVelocity.y);
-            if (currentPos.x <= leftLimit)
+            else
             {
-                movingRight = true;
-                Flip();
+                rb.linearVelocity = new Vector2(-walkSpeed, rb.linearVelocity.y);
+                if (currentPos.x <= leftLimit)
+                {
+                    movingRight = true;
+                    Flip();
+                }
             }
         }
     }
 
     void Attack()
     {
-        if (isAttacking) return;
+        if (isAttacking || isHurt) return;
 
         isAttacking = true;
         animator.SetBool("isAttack", true);
@@ -110,22 +119,29 @@ public class Eyefly : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         // Bật hitbox khi animation bắt đầu
-        Invoke("EnableHitbox", 0.55f); // Chờ 0.2s trước khi bật hitbox để khớp với animation
-        Invoke("ResetAttack", 1f);
+        // Invoke("EnableHitbox", 1f); // Chờ 0.2s trước khi bật hitbox để khớp với animation
+
+    }
+    private void AttackAudio()
+    {
+        audio.PlayMonsterBite();
+    }
+    private void DeadAudio()
+    {
+        audio.PlayMonsterDead();
     }
 
     void ResetAttack()
     {
         isAttacking = false;
         animator.SetBool("isAttack", false);
+        Move();
 
-        // Tắt hitbox khi animation kết thúc
-        DisableHitbox();
 
-        if (!HasTarget)
-        {
-            walkSpeed = 2f;
-        }
+    }
+    private void TouchEnemy()
+    {
+        audio.AttackOnEnemy();
     }
 
     void Flip()
@@ -150,21 +166,29 @@ public class Eyefly : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        if (isDead) return;
-
+        if (isDead || isHurt) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-
-        CancelAttack();
+        walkSpeed = 2f;
 
         if (currentHealth > 0)
         {
+            isHurt = true; // Đánh dấu là đang bị thương
+
             animator.SetTrigger("isHurt");
+            CancelAttack();
+
+            // Gọi hàm ResetHurt sau 0.5s để kết thúc trạng thái bị thương
+            Invoke(nameof(ResetHurt), 0.5f);
         }
         else
         {
-            animator.SetTrigger("isHurt");
+
             Die();
         }
+    }
+    void ResetHurt()
+    {
+        isHurt = false;
     }
 
     void CancelAttack()
@@ -179,10 +203,10 @@ public class Eyefly : MonoBehaviour
     private void Die()
     {
         if (isDead) return;
-
+        animator.SetTrigger("isHurt");
         isDead = true;
         animator.SetBool("isDead", true);
-        rb.gravityScale = 0; // Tăng trọng lực để rơi nhanh hơn
+        rb.gravityScale = 0;// Tăng trọng lực để rơi nhanh hơn
 
         // Không tắt Collider ngay lập tức, chỉ tắt trigger nếu có
         Collider2D col = GetComponent<Collider2D>();
@@ -201,7 +225,7 @@ public class Eyefly : MonoBehaviour
     }
     private void EnableGravity()
     {
-        rb.gravityScale = 2; // Bắt đầu rơi xuống
+        rb.gravityScale = 2;
     }
 
 

@@ -1,4 +1,7 @@
 
+using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -11,16 +14,15 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
-    [SerializeField] private float dashSpeed = 60;
     private Animator animator;
 
     private int lastAttackType = -1;
     public float attackCooldown = 0.5f; // Thời gian chờ giữa các lần tấn công
     private float lastAttackTime;
-    public float DashCooldown = 0.5f;
-    [SerializeField] private float attackDamage = 1; // Sát thương mỗi đòn đánh
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private GameObject playerHitBox;
+    [SerializeField] private TrailRenderer tr;
+    public TextMeshProUGUI Traptext;
 
     private bool isGrounded;
     private Rigidbody2D rb;
@@ -28,7 +30,15 @@ public class Player : MonoBehaviour
     private bool isWallClinging;
     private bool isDead = false;
     private bool isTrapped = false;
-    private float originalSpeed;
+    public float originalSpeed;
+    private Audio audio;
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 18f;
+    private float dasingTime = 0.2f;
+    private float dashingCooldown = 1f;
+    private bool isHurt = false;
+
 
     [System.Obsolete]
     public void SetDead()
@@ -37,7 +47,9 @@ public class Player : MonoBehaviour
         moveSpeed = 0;
         rb.linearVelocity = Vector2.zero;
         GameManager gameManager = FindObjectOfType<GameManager>();
+        audio.PlayPlayerHurt();
         Invoke(nameof(DelayedGameOver), 2.5f);
+        audio.PlayDeadSound();
     }
 
     [System.Obsolete]
@@ -54,7 +66,9 @@ public class Player : MonoBehaviour
         isTrapped = true;
         moveSpeed = 0; // Ngăn di chuyển
         rb.linearVelocity = Vector2.zero;
+        audio.PlayPlayerHurt();
         animator.SetTrigger("Trapclose");
+        Traptext.gameObject.SetActive(true);
 
     }
 
@@ -65,21 +79,30 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = moveSpeed;
+        audio = FindAnyObjectByType<Audio>();
     }
     void Start()
     {
         playerHitBox.SetActive(false);
+        Traptext.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (isDashing || isHurt) // Không thực hiện thao tác khi đang bị thương
+        {
+            return;
+        }
         if (!isDead)
         {
             if (isTrapped && Input.GetKeyDown(KeyCode.E)) // Press "E" to escape trap
             {
                 isTrapped = false;
                 moveSpeed = originalSpeed;
+                Traptext.gameObject.SetActive(false);
             }
         }
         if (!isTrapped)
@@ -94,7 +117,11 @@ public class Player : MonoBehaviour
         {
             HandleAttack();
         }
-        HanldeDash();
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && !isTrapped)
+        {
+            StartCoroutine(HanldeDash());
+        }
 
 
     }
@@ -102,9 +129,8 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        if (isWallClinging || isDead || isTrapped)
+        if (isWallClinging || isDead || isTrapped || isDashing)
             return;
-
         float moveInput = Input.GetAxisRaw("Horizontal");
         Vector2 targetVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
@@ -125,6 +151,7 @@ public class Player : MonoBehaviour
             return;
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            audio.PlayJumpSound();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
         }
         // if (Input.GetButtonDown("Jump") && isGrounded)
@@ -155,6 +182,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
+                    audio.PlayJumpSound();
                     rb.linearVelocity = new Vector2(jumpDirection * moveSpeed, JumpForce); // Nhảy theo hướng
                 }
 
@@ -185,6 +213,8 @@ public class Player : MonoBehaviour
 
     private void HandleAttack()
     {
+        if (isHurt || isDead) return;
+
         // Kiểm tra nếu đang tấn công thì không thực hiện tiếp
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 0.9f) return;
@@ -195,7 +225,18 @@ public class Player : MonoBehaviour
         {
             attackType = Random.Range(1, 4); // Random từ 1 đến 3
         } while (attackType == lastAttackType);
-
+        if (attackType == 1)
+        {
+            audio.PlayAttackSword1();
+        }
+        else if (attackType == 2)
+        {
+            audio.PlayAttackSword2();
+        }
+        else if (attackType == 3)
+        {
+            audio.PlayAttackSword3();
+        }
         animator.SetInteger("AttackType", attackType);
         lastAttackType = attackType;
 
@@ -216,40 +257,31 @@ public class Player : MonoBehaviour
     }
 
 
-    private void HanldeDash()
+    private IEnumerator HanldeDash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Vector2 dashDirection = new Vector2(transform.localScale.x, 0); // Di chuyển theo chiều X
-            rb.linearVelocity = dashDirection * dashSpeed;
+        canDash = false;
+        isDashing = true;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
 
-            // Tạm dừng vận tốc trong thời gian dash
-            animator.SetTrigger("Dash");
-        }
+        animator.SetTrigger("Dash");
+        tr.emitting = true;
+        yield return new WaitForSeconds(dasingTime);
+        tr.emitting = false;
+        rb.gravityScale = 3f;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+
+    }
+    private void PlayerDashAudio()
+    {
+        audio.PlayDashAudio();
     }
 
-    // void DamageEnemy()
-    // {
-    //     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 2f);
-    //     foreach (Collider2D enemy in hitEnemies)
-    //     {
-    //         if (enemy.CompareTag("Enemy"))
-    //         {
-    //             // Kiểm tra xem enemy là loại nào và gọi TakeDamage()
-    //             Skeleton skeleton = enemy.GetComponent<Skeleton>();
-    //             if (skeleton != null) skeleton.TakeDamage(1);
 
-    //             Eyefly eyeFly = enemy.GetComponent<Eyefly>();
-    //             if (eyeFly != null) eyeFly.TakeDamage(1);
 
-    //             Goblin goblin = enemy.GetComponent<Goblin>();
-    //             if (goblin != null) goblin.TakeDamage(1);
 
-    //             Mushroom mushroom = enemy.GetComponent<Mushroom>();
-    //             if (mushroom != null) mushroom.TakeDamage(1);
-    //         }
-    //     }
-    // }
 
 
 

@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Wall
   - Enemy
+  - EnemyHitBox
+  - Ground
+  - PlayerHitBox
+  - Portal
+  - HealingItem
+  - Clock
   layers:
   - Default
   - TransparentFX
@@ -19,7 +25,7 @@ TagManager:
   - Enemy
   - PlayerHitBox
   - EnemyHitBox
-  - 
+  - Portal
   - 
   - 
   - 
