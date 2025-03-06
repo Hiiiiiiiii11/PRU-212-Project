@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Trap : MonoBehaviour
@@ -5,17 +6,17 @@ public class Trap : MonoBehaviour
     [SerializeField] private float damage;
     private Animator animator;
     private bool isTrapClosed = false;
-    private Audio audio;  // Flag to track if the trap is closed
+    private Audio audio;
+    private Coroutine damageCoroutine; // Coroutine để trừ máu mỗi 3s
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        audio = FindAnyObjectByType<Audio>(); // Get the Animator of the Trap
+        audio = FindAnyObjectByType<Audio>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Only apply damage if the trap is open
         if (!isTrapClosed && collision.CompareTag("Player"))
         {
             collision.GetComponent<Health>().TakeDamage(damage);
@@ -29,16 +30,34 @@ public class Trap : MonoBehaviour
             }
             // Close the trap to prevent further damage
             CloseTrap();
+            damageCoroutine = StartCoroutine(DamageOverTime(player));
         }
     }
 
-    // This method will be called to close the trap and stop dealing damage
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && damageCoroutine != null)
+        {
+            StopCoroutine(damageCoroutine); // Dừng trừ máu khi rời khỏi bẫy
+            damageCoroutine = null;
+        }
+    }
+
+    private IEnumerator DamageOverTime(Player player)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+            player.GetComponent<Health>().TakeDamage(1f);
+            audio.PlayPlayerHurt();
+        }
+    }
+
     private void CloseTrap()
     {
         isTrapClosed = true;
     }
 
-    // This method will be called to open the trap and allow damage again
     public void OpenTrap()
     {
         isTrapClosed = false;
