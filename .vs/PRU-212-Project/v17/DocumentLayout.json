@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PRU212\\PRU-212-Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 3\\script\\eaglecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\eaglecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 5\\script\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 5\\script\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EagleController.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\EagleController.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\EagleController.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\EagleController.cs",
+              "RelativeToolTip": "Assets\\Level 3\\Script\\EagleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T21:24:22.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DetectionZone.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 5\\Script\\DetectionZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 5\\Script\\DetectionZone.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 5\\Script\\DetectionZone.cs",
+              "RelativeToolTip": "Assets\\Level 5\\Script\\DetectionZone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T21:21:39.426Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
