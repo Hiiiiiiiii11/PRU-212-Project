@@ -21,12 +21,12 @@ MonoBehaviour:
   deccelInAir: 0.5
   doConserveMomentum: 1
   jumpHeight: 8
-  dashPower: 7
+  dashPower: 15
   dashingCoolDown: 0.5
   dashingTime: 0.2
   wallDistance: 0.03
   wallJumpTime: 0.2
   wallSlideSpeed: 0.5
   wallJumpingYPower: 9
-  wallJumpingXPower: 4
+  wallJumpingXPower: 8
   WallJumpTimeInSecond: 0.1

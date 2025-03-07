@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 423c55b58dd92854faf082e596cfdd04
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1223604251050203969
+    second: lezard-1_0
+  - first:
+      213: 1562118118971138146
+    second: lezard-1_1
+  - first:
+      213: -930000828052545979
+    second: lezard-1_2
+  - first:
+      213: -4886143974215860360
+    second: lezard-1_3
+  - first:
+      213: 8120216811461880671
+    second: lezard-1_4
+  - first:
+      213: -8338548508433242567
+    second: lezard-1_5
+  - first:
+      213: -1573406203253740417
+    second: lezard-1_6
+  - first:
+      213: -9118579496686136622
+    second: lezard-1_7
+  - first:
+      213: 5906512618355173750
+    second: lezard-1_8
+  - first:
+      213: -7194839028515716689
+    second: lezard-1_9
+  - first:
+      213: -5587154184939921277
+    second: lezard-1_10
+  - first:
+      213: 7658515248815480140
+    second: lezard-1_11
+  - first:
+      213: 2090618678977479752
+    second: lezard-1_12
+  - first:
+      213: -4744052511413086
+    second: lezard-1_13
+  - first:
+      213: -3233107432619962501
+    second: lezard-1_14
+  - first:
+      213: -2398539138155488695
+    second: lezard-1_15
+  - first:
+      213: -2850460296682063714
+    second: lezard-1_16
+  - first:
+      213: 5437021100092520592
+    second: lezard-1_17
+  - first:
+      213: -7409610955430627746
+    second: lezard-1_18
+  - first:
+      213: 1262612529488533899
+    second: lezard-1_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lezard-1_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 152
+        width: 65
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb4ae76aa62e40fe0800000000000000
+      internalID: -1223604251050203969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 152
+        width: 65
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 260e97a1722cda510800000000000000
+      internalID: 1562118118971138146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 152
+        width: 65
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54edb1b9c29f713f0800000000000000
+      internalID: -930000828052545979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_3
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 152
+        width: 65
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87fb27f71fde03cb0800000000000000
+      internalID: -4886143974215860360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_4
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 152
+        width: 65
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b2752da2ec0b070800000000000000
+      internalID: 8120216811461880671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_5
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 152
+        width: 65
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9362974af46874c80800000000000000
+      internalID: -8338548508433242567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 101
+        width: 65
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7c2aa7f4632a2ae0800000000000000
+      internalID: -1573406203253740417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 101
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2dcd3924c447180800000000000000
+      internalID: -9118579496686136622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_8
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 101
+        width: 65
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6792c6eaee528f150800000000000000
+      internalID: 5906512618355173750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_9
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 101
+        width: 65
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa14431060cc62c90800000000000000
+      internalID: -7194839028515716689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_10
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 50
+        width: 60
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380a15deed07672b0800000000000000
+      internalID: -5587154184939921277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_11
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 101
+        width: 65
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d1f80da03884a60800000000000000
+      internalID: 7658515248815480140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_12
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 101
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844cf39ac9e530d10800000000000000
+      internalID: 2090618678977479752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_13
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 51
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ace2433f452feff0800000000000000
+      internalID: -4744052511413086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 62
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f03067be1b123d0800000000000000
+      internalID: -3233107432619962501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_15
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1
+        width: 96
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ade52ac5da6bed0800000000000000
+      internalID: -2398539138155488695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_16
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 50
+        width: 94
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9839e966712178d0800000000000000
+      internalID: -2850460296682063714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_17
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 098715b42ed247b40800000000000000
+      internalID: 5437021100092520592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 50
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56f6b50816cb2990800000000000000
+      internalID: -7409610955430627746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lezard-1_19
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 74
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b891f1de763b58110800000000000000
+      internalID: 1262612529488533899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lezard-1_0: -1223604251050203969
+      lezard-1_1: 1562118118971138146
+      lezard-1_10: -5587154184939921277
+      lezard-1_11: 7658515248815480140
+      lezard-1_12: 2090618678977479752
+      lezard-1_13: -4744052511413086
+      lezard-1_14: -3233107432619962501
+      lezard-1_15: -2398539138155488695
+      lezard-1_16: -2850460296682063714
+      lezard-1_17: 5437021100092520592
+      lezard-1_18: -7409610955430627746
+      lezard-1_19: 1262612529488533899
+      lezard-1_2: -930000828052545979
+      lezard-1_3: -4886143974215860360
+      lezard-1_4: 8120216811461880671
+      lezard-1_5: -8338548508433242567
+      lezard-1_6: -1573406203253740417
+      lezard-1_7: -9118579496686136622
+      lezard-1_8: 5906512618355173750
+      lezard-1_9: -7194839028515716689
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

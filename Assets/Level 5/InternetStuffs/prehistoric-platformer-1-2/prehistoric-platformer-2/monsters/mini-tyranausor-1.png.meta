@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: cd0606b621657394cadc63161659da6b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5369104872059665408
+    second: mini-tyranausor-1_0
+  - first:
+      213: 4975368858730791208
+    second: mini-tyranausor-1_1
+  - first:
+      213: 6743723632304809187
+    second: mini-tyranausor-1_2
+  - first:
+      213: -2801519677316518444
+    second: mini-tyranausor-1_3
+  - first:
+      213: -4230428007049404434
+    second: mini-tyranausor-1_4
+  - first:
+      213: 9107264515385724910
+    second: mini-tyranausor-1_5
+  - first:
+      213: 586273379357913094
+    second: mini-tyranausor-1_6
+  - first:
+      213: -8760526884146112407
+    second: mini-tyranausor-1_7
+  - first:
+      213: 1827112303941842673
+    second: mini-tyranausor-1_8
+  - first:
+      213: 7360406627228589818
+    second: mini-tyranausor-1_9
+  - first:
+      213: 5878809154568858317
+    second: mini-tyranausor-1_10
+  - first:
+      213: 4407720409688662813
+    second: mini-tyranausor-1_11
+  - first:
+      213: 8483147134982435030
+    second: mini-tyranausor-1_12
+  - first:
+      213: 419826845211548594
+    second: mini-tyranausor-1_13
+  - first:
+      213: 3175460323036958266
+    second: mini-tyranausor-1_14
+  - first:
+      213: 2883421422898338289
+    second: mini-tyranausor-1_15
+  - first:
+      213: -5190149566495075310
+    second: mini-tyranausor-1_16
+  - first:
+      213: 8730355320933991346
+    second: mini-tyranausor-1_17
+  - first:
+      213: 6669600688340222558
+    second: mini-tyranausor-1_18
+  - first:
+      213: 8497896582953895426
+    second: mini-tyranausor-1_19
+  - first:
+      213: 1581646883005628815
+    second: mini-tyranausor-1_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mini-tyranausor-1_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 185
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004801bc09b1d75b0800000000000000
+      internalID: -5369104872059665408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 185
+        width: 60
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821803bcd9f0c0540800000000000000
+      internalID: 4975368858730791208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 185
+        width: 60
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e46feee9e4869d50800000000000000
+      internalID: 6743723632304809187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 185
+        width: 60
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dd284252b00f19d0800000000000000
+      internalID: -2801519677316518444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_4
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 185
+        width: 60
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eefd4ff24208a45c0800000000000000
+      internalID: -4230428007049404434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_5
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 185
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef061b03d0836e70800000000000000
+      internalID: 9107264515385724910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 123
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60075e5488cd22800800000000000000
+      internalID: 586273379357913094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 123
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9681631d63b5c6680800000000000000
+      internalID: -8760526884146112407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_8
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 61
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6f231c5f43b5910800000000000000
+      internalID: 1827112303941842673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 123
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afe146294da652660800000000000000
+      internalID: 7360406627228589818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_10
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 61
+        width: 66
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca246067c9b59150800000000000000
+      internalID: 5878809154568858317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 123
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d136bb80c5e5b2d30800000000000000
+      internalID: 4407720409688662813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_12
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 123
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d03006af513ab570800000000000000
+      internalID: 8483147134982435030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 61
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbd1089a4683d500800000000000000
+      internalID: 419826845211548594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 61
+        width: 65
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e07f8e650811c20800000000000000
+      internalID: 3175460323036958266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_15
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 61
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f95b91d188f30820800000000000000
+      internalID: 2883421422898338289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_16
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 62
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214d9e5c772e8f7b0800000000000000
+      internalID: -5190149566495075310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_17
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b34633b8e3782970800000000000000
+      internalID: 8730355320933991346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_18
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52483e2d7e2f8c50800000000000000
+      internalID: 6669600688340222558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_19
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 63
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20609fc1be79ee570800000000000000
+      internalID: 8497896582953895426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_20
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 70
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8187adc57323f510800000000000000
+      internalID: 1581646883005628815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mini-tyranausor-1_0: -5369104872059665408
+      mini-tyranausor-1_1: 4975368858730791208
+      mini-tyranausor-1_10: 5878809154568858317
+      mini-tyranausor-1_11: 4407720409688662813
+      mini-tyranausor-1_12: 8483147134982435030
+      mini-tyranausor-1_13: 419826845211548594
+      mini-tyranausor-1_14: 3175460323036958266
+      mini-tyranausor-1_15: 2883421422898338289
+      mini-tyranausor-1_16: -5190149566495075310
+      mini-tyranausor-1_17: 8730355320933991346
+      mini-tyranausor-1_18: 6669600688340222558
+      mini-tyranausor-1_19: 8497896582953895426
+      mini-tyranausor-1_2: 6743723632304809187
+      mini-tyranausor-1_20: 1581646883005628815
+      mini-tyranausor-1_3: -2801519677316518444
+      mini-tyranausor-1_4: -4230428007049404434
+      mini-tyranausor-1_5: 9107264515385724910
+      mini-tyranausor-1_6: 586273379357913094
+      mini-tyranausor-1_7: -8760526884146112407
+      mini-tyranausor-1_8: 1827112303941842673
+      mini-tyranausor-1_9: 7360406627228589818
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

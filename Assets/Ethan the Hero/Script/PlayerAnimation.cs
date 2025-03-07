@@ -57,7 +57,7 @@ namespace EthanTheHero
 
             #region JUMP
 
-            myAnim.SetBool(jump, playerMv.isGrounded);
+            myAnim.SetBool(jump, playerMv.grounded);
             myAnim.SetFloat(yvelocity, myBody.linearVelocity.y);
 
             #endregion

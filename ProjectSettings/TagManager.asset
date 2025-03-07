@@ -9,6 +9,16 @@ TagManager:
   - Trap
   - FallBox
   - WinBox
+  - Wall
+  - Key
+  - Gate
+  - Chest
+  - Clock
+  - PlayerHitBox
+  - Portal
+  - EnemyHitBox
+  - HealingItem
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -16,17 +26,17 @@ TagManager:
   - Mob
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Wall
+  - Player
+  - Enemy
+  - PlayerHitBox
+  - EnemyHitBox
+  - Portal
+  - GroundDetection
+  - Trap
+  - WallCheck
+  - Pickup
   - 
   - 
   - 
@@ -43,14 +53,44 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: BackGround
     uniqueID: 2418749765
+    locked: 0
+  - name: Ground
+    uniqueID: 2025096077
+    locked: 0
+  - name: ForeGround
+    uniqueID: 2851554123
+    locked: 0
+  - name: Wall
+    uniqueID: 2264330929
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Item
+    uniqueID: 1589740303
+    locked: 0
   - name: UI
     uniqueID: 4236993893
+    locked: 0
+  - name: Trap
+    uniqueID: 2795500213
+    locked: 0
+  - name: Decorate
+    uniqueID: 499767915
+    locked: 0
+  - name: Touch
+    uniqueID: 3123669041
+    locked: 0
+  - name: Platform
+    uniqueID: 83974909
+    locked: 0
+  - name: Enemy
+    uniqueID: 2050181191
+    locked: 0
+  - name: Player
+    uniqueID: 4277831535
     locked: 0
   m_RenderingLayers:
   - Default

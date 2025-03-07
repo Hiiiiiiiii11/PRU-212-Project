@@ -27,7 +27,7 @@ namespace EthanTheHero
 		private bool dashButtonPressed;
 
 		//Jump
-		[HideInInspector] public bool isGrounded;
+		[HideInInspector] public bool grounded;
 		[HideInInspector] public bool isJumping;
 		private bool jumpButtonPressed;
 
@@ -78,13 +78,13 @@ namespace EthanTheHero
 			if (!wallSliding)
 				run(1);
 			//checks if set box overlaps with ground
-			if (Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, groundLayer))
+			if (Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
 			{
 				lastOnGroundTime = 0.1f;
-				isGrounded = true;
+				grounded = true;
 			}
 			else
-				isGrounded = false;
+				grounded = false;
 
 
 			WallSlidngMechanic();
@@ -147,11 +147,11 @@ namespace EthanTheHero
 		private void jump()
 		{
 
-			if (isGrounded)
+			if (grounded)
 				isJumping = false;
 
 
-			if (jumpButtonPressed && isGrounded)
+			if (jumpButtonPressed && grounded)
 			{
 				isJumping = true;
 				myBody.linearVelocity = new Vector2(myBody.linearVelocity.x, data.jumpHeight);
@@ -166,7 +166,7 @@ namespace EthanTheHero
 			Debug.DrawRay(WallCheck.position, new Vector2(data.wallDistance, 0f), Color.red);
 
 
-			if (!isGrounded && wall)
+			if (!grounded && wall)
 			{
 				wallSliding = true;
 				jumpTime = Time.time + data.wallJumpTime;
@@ -184,11 +184,11 @@ namespace EthanTheHero
 		private IEnumerator wallJumpMechanic()
 		{
 			wallJump = true;
-            wallSliding = false;
-            float direction = transform.localScale.x; // Get the facing direction
-            // Apply force to move away from the wall
-            myBody.linearVelocity = new Vector2(-direction * data.wallJumpingXPower, data.wallJumpingYPower);
-            yield return new WaitForSeconds(data.WallJumpTimeInSecond);
+			if (transform.localScale.x == -1f)
+				myBody.linearVelocity = new Vector2(data.wallJumpingXPower, data.wallJumpingYPower);
+			else
+				myBody.linearVelocity = new Vector2(-data.wallJumpingXPower, data.wallJumpingYPower);
+			yield return new WaitForSeconds(data.WallJumpTimeInSecond);
 			wallJump = false;
 		}
 		#endregion
@@ -196,10 +196,13 @@ namespace EthanTheHero
 		#region OTHER
 		private void CheckDirectionToFace(bool isMovingRight)
 		{
-            Vector3 temp = transform.localScale;
-            temp.x = isMovingRight ? Mathf.Abs(temp.x) : -Mathf.Abs(temp.x);
-            transform.localScale = temp;
-        }
+			Vector3 tem = transform.localScale;
+			if (!isMovingRight)
+				tem.x = -1f;
+			else
+				tem.x = 1f;
+			transform.localScale = tem;
+		}
 		#endregion
 	}
 }
