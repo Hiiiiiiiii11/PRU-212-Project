@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 957029366289396662}
   - component: {fileID: 1054678818097457206}
   - component: {fileID: 6755362170863566936}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: HitboxDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,8 +177,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1506325523
-  m_SortingLayer: 6
+  m_SortingLayerID: 2050181191
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 7990280708397452796}
   - component: {fileID: 1788442348687096221}
   - component: {fileID: 6429202174240684966}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: SwordAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 5974039637408270677}
   - component: {fileID: 5558387684940317436}
   - component: {fileID: 5681202026875473866}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: CliffDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
