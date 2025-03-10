@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\PRU212\\PRU-212-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 3\\script\\eaglecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\eaglecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|D:\\PRU212\\PRU-212-Project\\assets\\level 3\\script\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 5\\script\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 5\\script\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 3\\script\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|D:\\PRU212\\PRU-212-Project\\assets\\level 3\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 3\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|d:\\pru212\\pru-212-project\\assets\\level 3\\script\\playeranimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6196647D-DDF2-0D32-01A5-275789F0122C}|Assembly-CSharp.csproj|solutionrelative:assets\\level 3\\script\\playeranimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EagleController.cs",
-              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\EagleController.cs",
-              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\EagleController.cs",
-              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\EagleController.cs",
-              "RelativeToolTip": "Assets\\Level 3\\Script\\EagleController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\PauseMenu.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\PauseMenu.cs",
+              "RelativeToolTip": "Assets\\Level 3\\Script\\PauseMenu.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswDQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T21:24:22.145Z",
+              "WhenOpened": "2025-03-10T07:32:27.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DetectionZone.cs",
-              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 5\\Script\\DetectionZone.cs",
-              "RelativeDocumentMoniker": "Assets\\Level 5\\Script\\DetectionZone.cs",
-              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 5\\Script\\DetectionZone.cs",
-              "RelativeToolTip": "Assets\\Level 5\\Script\\DetectionZone.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\GameManager.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Level 3\\Script\\GameManager.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAswEwAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T21:21:39.426Z",
+              "WhenOpened": "2025-03-10T07:16:26.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerAnimation.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\PlayerAnimation.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\PlayerAnimation.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\PlayerAnimation.cs",
+              "RelativeToolTip": "Assets\\Level 3\\Script\\PlayerAnimation.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAADwv2EAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T06:36:06.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\PlayerController.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Level 3\\Script\\PlayerController.cs",
+              "ViewState": "AgIAABIBAAAAAAAAAADwvycBAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T06:06:31.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Level 3\\Script\\AudioManager.cs",
+              "ToolTip": "D:\\PRU212\\PRU-212-Project\\Assets\\Level 3\\Script\\AudioManager.cs",
+              "RelativeToolTip": "Assets\\Level 3\\Script\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T05:53:56.58Z",
               "EditorCaption": ""
             }
           ]
