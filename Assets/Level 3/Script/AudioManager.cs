@@ -43,6 +43,31 @@ namespace level3
             else
                 sfxSource.PlayOneShot(s.clip);
         }
+
+        public void StopSFX()
+        {
+            sfxSource.Stop();
+        }
+
+        public void ToggleMusic()
+        {
+            musicSource.mute = !musicSource.mute;
+        }
+
+        public void ToggleSFX()
+        {
+            sfxSource.mute = !sfxSource.mute;
+        }
+
+        public void MusicVolume(float volume)
+        {
+            musicSource.mute = !musicSource.mute;
+        }
+
+        public void SFXVolume(float volume)
+        {
+            sfxSource.volume = volume;
+        }
     }
 
 }
