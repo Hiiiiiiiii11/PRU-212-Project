@@ -61,7 +61,7 @@ namespace level3
 
         public void MusicVolume(float volume)
         {
-            musicSource.mute = !musicSource.mute;
+            musicSource.volume = volume;
         }
 
         public void SFXVolume(float volume)

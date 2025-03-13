@@ -9,6 +9,19 @@ namespace level3
         [SerializeField] GameObject pauseMenu;
         public Slider _musicSlider, _sfxSlider;
 
+        private void Start()
+        {
+            if (PlayerPrefs.HasKey("musicVolume"))
+                LoadVolume();
+            else
+                MusicVolume();
+        }
+
+        private void LoadVolume()
+        {
+            _musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+            _sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+        }
         public void Pause()
         {
             pauseMenu.SetActive(true);
@@ -45,12 +58,16 @@ namespace level3
 
         public void MusicVolume()
         {
-            AudioManager.instance.MusicVolume(_musicSlider.value);
+            float volume = _musicSlider.value;
+            PlayerPrefs.SetFloat("musicVolume", volume);
+            AudioManager.instance.MusicVolume(volume);
         }
 
         public void SFXVolume()
         {
-            AudioManager.instance.SFXVolume(_sfxSlider.value);
+            float volume = _sfxSlider.value;
+            PlayerPrefs.SetFloat("sfxVolume", volume);
+            AudioManager.instance.SFXVolume(volume);
         }
     }
 }
