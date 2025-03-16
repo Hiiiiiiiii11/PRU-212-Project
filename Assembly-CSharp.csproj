@@ -121,6 +121,7 @@
     <Compile Include="Assets\Level 3\Script\PigController.cs" />
     <Compile Include="Assets\Level 1\Scripts\EnemyHitBox.cs" />
     <Compile Include="Assets\Level 4\Scripts\SetBoolBehaviour.cs" />
+    <Compile Include="Assets\Level 3\Script\SkeletonWalk.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideIfAttribute.cs" />
     <Compile Include="Assets\Level 1\Scripts\GameManager.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxAttribute.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Assets\Level 4\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Level 5\Script\Attack.cs" />
     <Compile Include="Assets\Level 1\Scripts\Trap.cs" />
+    <Compile Include="Assets\Level 3\Script\SkeletonController.cs" />
     <Compile Include="Assets\Level 3\Script\HealthBar.cs" />
     <Compile Include="Assets\Level 5\Script\ParallaxEffect.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ReadOnlyAttribute.cs" />

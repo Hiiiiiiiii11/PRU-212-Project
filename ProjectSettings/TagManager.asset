@@ -53,20 +53,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackGround
-    uniqueID: 2418749765
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Ground
     uniqueID: 2025096077
+    locked: 0
+  - name: BackGround
+    uniqueID: 2418749765
     locked: 0
   - name: ForeGround
     uniqueID: 2851554123
     locked: 0
   - name: Wall
     uniqueID: 2264330929
-    locked: 0
-  - name: Default
-    uniqueID: 0
     locked: 0
   - name: Item
     uniqueID: 1589740303

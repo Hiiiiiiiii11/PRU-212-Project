@@ -178,14 +178,14 @@ namespace level3
             if (jumpButtonPressed && IsGrounded())
             {
                 isJumping = true;
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
                 AudioManager.instance.PlaySFX("Jump");
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);                
             }
-            if (isOnEnemy)
+            else if (isOnEnemy)
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
                 AudioManager.instance.PlaySFX("Jump");
-            }            
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+            }
         }
 
         private void WallSliding()
@@ -237,16 +237,6 @@ namespace level3
                 }
                 rb.linearVelocity = new Vector2(enemy.transform.position.x > transform.position.x ? -hurtForce : hurtForce, rb.linearVelocity.y);
                 TakeDamage(20);
-                if (currentHealth > 0)
-                    playerAnimation.Hurt();
-                else
-                {
-                    playerAnimation.Death();                    
-                    rb.linearVelocity = Vector2.zero; // Stop all movement
-                    rb.bodyType = RigidbodyType2D.Kinematic; // Make the Rigidbody2D static-like (no physics interaction)
-                    rb.simulated = false; // Completely disable physics simulation
-                    gameManager.GameOver();
-                }
             }
         }
 
@@ -265,17 +255,6 @@ namespace level3
                 Debug.Log("Hit by trap");
                 TakeDamage(20);
                 Jump(true);
-                if (currentHealth > 0)
-                    playerAnimation.Hurt();
-                else
-                {
-                    playerAnimation.Death();
-                    AudioManager.instance.PlaySFX("Game Over");
-                    rb.linearVelocity = Vector2.zero;
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                    rb.simulated = false;
-                    gameManager.GameOver();
-                }
             }
             else if (collision.gameObject.CompareTag("FallBox"))
             {
@@ -316,11 +295,22 @@ namespace level3
             }
         }
 
-        void TakeDamage(int damage)
+        public void TakeDamage(int damage)
         {
             currentHealth -= damage;
             AudioManager.instance.PlaySFX("Hit");
             healthBar.SetHealth(currentHealth);
+            if (currentHealth > 0)
+                playerAnimation.Hurt();
+            else
+            {
+                playerAnimation.Death();
+                AudioManager.instance.PlaySFX("Game Over");
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.simulated = false;
+                gameManager.GameOver();
+            }
         }
 
         public bool IsGrounded()
