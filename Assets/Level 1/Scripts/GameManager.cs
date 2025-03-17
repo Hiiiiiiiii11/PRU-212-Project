@@ -48,6 +48,12 @@ namespace level1
             gameOverUI.SetActive(false); // Ẩn UI khi restart
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Load lại scene hiện tại
         }
+        public void NextLevel()
+        {
+            Debug.Log("Next Level button clicked!");
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Level 2");
+        }
         public void GotoMenu()
         {
             SceneManager.LoadScene("Main Menu");
