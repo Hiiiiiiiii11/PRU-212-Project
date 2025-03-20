@@ -74,6 +74,7 @@ namespace level3
             yield return new WaitForSeconds(gameOverDelay);
             Time.timeScale = 0; // Stop the game when Game Over UI appears
             gameOverUI.SetActive(true);
+            AudioManager.instance.PlaySFX("Game Over");
         }
     }
 }

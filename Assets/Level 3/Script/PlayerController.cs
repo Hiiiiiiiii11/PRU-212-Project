@@ -55,6 +55,8 @@ namespace level3
         [Range(0.01f, 1)] public float accelInAir = 0.5f; //Multipliers applied to acceleration rate when airborne.
         [Range(0.01f, 1)] public float deccelInAir = 0.5f;
         public bool doConserveMomentum = true;
+        [HideInInspector] private float runSFXCooldown = 0.2f; // Adjust delay as needed (seconds)
+        [HideInInspector] private float lastRunSFXTime = 0f;   // Tracks last played time
 
         [Header("Jump")]
         public float jumpHeight = 10f; //Height of the player's jump
@@ -93,7 +95,7 @@ namespace level3
                 return;
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("Attack button pressed");
+                AudioManager.instance.PlaySFX("Attack");
                 Attack();
             }
             lastOnGroundTime -= Time.deltaTime;
@@ -142,6 +144,15 @@ namespace level3
 
             //Implementing run
             rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+            if (Mathf.Abs(targetSpeed) > 0.01f && lastOnGroundTime > 0) // Only play when grounded
+            {
+                if (Time.time - lastRunSFXTime >= runSFXCooldown) // Check cooldown
+                {
+                    AudioManager.instance.PlaySFX("Running");
+                    lastRunSFXTime = Time.time; // Update last played time
+                }
+            }
+            else AudioManager.instance.StopSFX();
         }
 
         private IEnumerator Dash()
@@ -153,6 +164,7 @@ namespace level3
             rb.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0f);
             yield return new WaitForSeconds(dashingTime);
             rb.linearVelocity = new Vector2(Mathf.Sign(move.x) * runMaxSpeed, rb.linearVelocity.y);
+            AudioManager.instance.PlaySFX("Dash");
             rb.gravityScale = originalGravivty;
             isDashing = false;
             yield return new WaitForSeconds(dashingCoolDown);
@@ -167,24 +179,26 @@ namespace level3
             {
                 isJumping = true;
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+                AudioManager.instance.PlaySFX("Jump");
             }
             if (isOnEnemy)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
-            }
+                AudioManager.instance.PlaySFX("Jump");
+            }            
         }
 
         private void WallSliding()
         {
             if (!IsGrounded() && IsWalled())
             {
-                isWallSliding = true;
+                isWallSliding = true;                
                 jumpTime = Time.time + wallJumpTime;
             }
             else if (jumpTime < Time.time)
                 isWallSliding = false;
             if (isWallSliding)
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+                rb.linearVelocity = new Vector2(0, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
         }
 
         private IEnumerator WallJump()
@@ -193,6 +207,7 @@ namespace level3
             isWallSliding = false;
             float direction = transform.localScale.x; // Get the facing direction
             rb.linearVelocity = new Vector2(-direction * wallJumpingXPower, wallJumpingYPower);// Apply force to move away from the wall
+            AudioManager.instance.PlaySFX("Jump");
             yield return new WaitForSeconds(WallJumpTimeInSecond);
             isWallJumping = false;
         }
@@ -214,6 +229,7 @@ namespace level3
                     if (isAboveEnemy && isFalling)
                     {
                         enemy.JumpedOn();
+                        AudioManager.instance.PlaySFX("Monster Death");
                         gameManager.AddScore(1);
                         Jump(true);
                         return; // Exit function to avoid hurt logic
@@ -225,7 +241,7 @@ namespace level3
                     playerAnimation.Hurt();
                 else
                 {
-                    playerAnimation.Death();
+                    playerAnimation.Death();                    
                     rb.linearVelocity = Vector2.zero; // Stop all movement
                     rb.bodyType = RigidbodyType2D.Kinematic; // Make the Rigidbody2D static-like (no physics interaction)
                     rb.simulated = false; // Completely disable physics simulation
@@ -241,6 +257,7 @@ namespace level3
             if (collision.gameObject.CompareTag("Coin"))
             {
                 Destroy(collision.gameObject);
+                AudioManager.instance.PlaySFX("Item");
                 gameManager.AddScore(1);
             }
             else if (collision.gameObject.CompareTag("Trap"))
@@ -253,6 +270,7 @@ namespace level3
                 else
                 {
                     playerAnimation.Death();
+                    AudioManager.instance.PlaySFX("Game Over");
                     rb.linearVelocity = Vector2.zero;
                     rb.bodyType = RigidbodyType2D.Kinematic;
                     rb.simulated = false;
@@ -263,6 +281,7 @@ namespace level3
             {
                 Debug.Log("Hit FallBox");
                 playerAnimation.Death();
+                AudioManager.instance.PlaySFX("Game Over");
                 rb.linearVelocity = Vector2.zero;
                 rb.bodyType = RigidbodyType2D.Kinematic;
                 rb.simulated = false;
@@ -274,6 +293,8 @@ namespace level3
                 rb.linearVelocity = Vector2.zero;
                 rb.bodyType = RigidbodyType2D.Kinematic;
                 rb.simulated = false;
+                AudioManager.instance.musicSource.Stop();
+                AudioManager.instance.PlaySFX("Level Completed");
                 gameManager.GameWin();
             }
         }
@@ -289,6 +310,7 @@ namespace level3
                 {
                     Debug.Log("Hit enemy");
                     enemyComponent.JumpedOn(); // Kill the enemy
+                    AudioManager.instance.PlaySFX("Monster Death");
                     gameManager.AddScore(3);
                 }
             }
@@ -297,6 +319,7 @@ namespace level3
         void TakeDamage(int damage)
         {
             currentHealth -= damage;
+            AudioManager.instance.PlaySFX("Hit");
             healthBar.SetHealth(currentHealth);
         }
 

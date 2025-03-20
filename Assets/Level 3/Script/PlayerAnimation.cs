@@ -45,7 +45,6 @@ namespace level3
         public void IdleAndRun()
         {
             animator.SetFloat(speed, Mathf.Abs(playerController.move.x));
-
             //Set Run Animation
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("RunIdleTrans"))
             {
