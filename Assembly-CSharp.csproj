@@ -85,6 +85,7 @@
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BoxGroupAttribute.cs" />
     <Compile Include="Assets\Level 2\Cainos\Pixel Art Platformer - Village Props\Script\Elevator.cs" />
     <Compile Include="Assets\Level 2\Cainos\Pixel Art Platformer - Village Props\Script\Chest.cs" />
+    <Compile Include="Assets\Level 1\Scripts\Boss.cs" />
     <Compile Include="Assets\Level 3\Script\LevelMenu.cs" />
     <Compile Include="Assets\Level 4\Scripts\TouchingDirections.cs" />
     <Compile Include="Assets\Level 1\Scripts\Player.cs" />
