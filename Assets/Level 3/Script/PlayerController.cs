@@ -17,10 +17,10 @@ namespace level3
         [SerializeField] private LayerMask wallLayer = default;
 
         [HideInInspector] public Vector2 move;
-        [HideInInspector] private PlayerAnimation playerAnimation;
-        [HideInInspector] private GameManager gameManager;
-        private Rigidbody2D rb;
-        private Animator animator;
+        [HideInInspector] public PlayerAnimation playerAnimation;
+        [HideInInspector] public GameManager gameManager;
+        public Rigidbody2D rb;
+        public Animator animator;
 
         //Dash
         [HideInInspector] public bool isDashing;
@@ -42,11 +42,17 @@ namespace level3
         public int maxHealth = 100;
         public int currentHealth;
         public HealthBar healthBar;
-        [SerializeField] public float hurtForce = 10f;
+
+        [Header("Attack")]
+        [SerializeField] public float hurtForce = 5f;
         [SerializeField] public float attackRadius = 0.5f;
+        [SerializeField] public int attackDamage = 20;
+        [SerializeField] private float attackCooldown = 0.5f; // Time between attacks
+        private float lastAttackTime = 0f;
 
         //Movement data
         [Header("Run")]
+        public float originalRunMaxSpeed = 6f;
         public float runMaxSpeed = 6f; //Target speed we want the player to reach.
         public float runAcceleration = 2f; //Time (approx.) time we want it to take for the player to accelerate from 0 to the runMaxSpeed.
         [HideInInspector] public float runAccelAmount; //The actual force (multiplied with speedDiff) applied to the player.
@@ -55,6 +61,8 @@ namespace level3
         [Range(0.01f, 1)] public float accelInAir = 0.5f; //Multipliers applied to acceleration rate when airborne.
         [Range(0.01f, 1)] public float deccelInAir = 0.5f;
         public bool doConserveMomentum = true;
+        [HideInInspector] private float runSFXCooldown = 0.2f; // Adjust delay as needed (seconds)
+        [HideInInspector] private float lastRunSFXTime = 0f;   // Tracks last played time
 
         [Header("Jump")]
         public float jumpHeight = 10f; //Height of the player's jump
@@ -91,9 +99,9 @@ namespace level3
         {
             if (isDashing || isWallJumping || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
                 return;
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Attack button pressed");
+                AudioManager.instance.PlaySFX("Attack");
                 Attack();
             }
             lastOnGroundTime -= Time.deltaTime;
@@ -142,6 +150,15 @@ namespace level3
 
             //Implementing run
             rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+            if (Mathf.Abs(targetSpeed) > 0.01f && lastOnGroundTime > 0) // Only play when grounded
+            {
+                if (Time.time - lastRunSFXTime >= runSFXCooldown) // Check cooldown
+                {
+                    AudioManager.instance.PlaySFX("Running");
+                    lastRunSFXTime = Time.time; // Update last played time
+                }
+            }
+            else AudioManager.instance.StopSFX();
         }
 
         private IEnumerator Dash()
@@ -153,6 +170,7 @@ namespace level3
             rb.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0f);
             yield return new WaitForSeconds(dashingTime);
             rb.linearVelocity = new Vector2(Mathf.Sign(move.x) * runMaxSpeed, rb.linearVelocity.y);
+            AudioManager.instance.PlaySFX("Dash");
             rb.gravityScale = originalGravivty;
             isDashing = false;
             yield return new WaitForSeconds(dashingCoolDown);
@@ -166,10 +184,12 @@ namespace level3
             if (jumpButtonPressed && IsGrounded())
             {
                 isJumping = true;
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+                AudioManager.instance.PlaySFX("Jump");
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);                
             }
-            if (isOnEnemy)
+            else if (isOnEnemy)
             {
+                AudioManager.instance.PlaySFX("Jump");
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
             }
         }
@@ -178,13 +198,13 @@ namespace level3
         {
             if (!IsGrounded() && IsWalled())
             {
-                isWallSliding = true;
+                isWallSliding = true;                
                 jumpTime = Time.time + wallJumpTime;
             }
             else if (jumpTime < Time.time)
                 isWallSliding = false;
             if (isWallSliding)
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+                rb.linearVelocity = new Vector2(0, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
         }
 
         private IEnumerator WallJump()
@@ -193,6 +213,7 @@ namespace level3
             isWallSliding = false;
             float direction = transform.localScale.x; // Get the facing direction
             rb.linearVelocity = new Vector2(-direction * wallJumpingXPower, wallJumpingYPower);// Apply force to move away from the wall
+            AudioManager.instance.PlaySFX("Jump");
             yield return new WaitForSeconds(WallJumpTimeInSecond);
             isWallJumping = false;
         }
@@ -214,23 +235,14 @@ namespace level3
                     if (isAboveEnemy && isFalling)
                     {
                         enemy.JumpedOn();
+                        AudioManager.instance.PlaySFX("Monster Death");
                         gameManager.AddScore(1);
                         Jump(true);
                         return; // Exit function to avoid hurt logic
                     }
                 }
                 rb.linearVelocity = new Vector2(enemy.transform.position.x > transform.position.x ? -hurtForce : hurtForce, rb.linearVelocity.y);
-                TakeDamage(20);
-                if (currentHealth > 0)
-                    playerAnimation.Hurt();
-                else
-                {
-                    playerAnimation.Death();
-                    rb.linearVelocity = Vector2.zero; // Stop all movement
-                    rb.bodyType = RigidbodyType2D.Kinematic; // Make the Rigidbody2D static-like (no physics interaction)
-                    rb.simulated = false; // Completely disable physics simulation
-                    gameManager.GameOver();
-                }
+                TakeDamage(20, Vector2.zero);
             }
         }
 
@@ -241,28 +253,26 @@ namespace level3
             if (collision.gameObject.CompareTag("Coin"))
             {
                 Destroy(collision.gameObject);
+                AudioManager.instance.PlaySFX("Item");
                 gameManager.AddScore(1);
+            }
+            else if (collision.gameObject.CompareTag("Key"))
+            {
+                Destroy(collision.gameObject);
+                AudioManager.instance.PlaySFX("Item");
+                gameManager.AddKey(1);
             }
             else if (collision.gameObject.CompareTag("Trap"))
             {
                 Debug.Log("Hit by trap");
-                TakeDamage(20);
+                TakeDamage(20, Vector2.zero);
                 Jump(true);
-                if (currentHealth > 0)
-                    playerAnimation.Hurt();
-                else
-                {
-                    playerAnimation.Death();
-                    rb.linearVelocity = Vector2.zero;
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                    rb.simulated = false;
-                    gameManager.GameOver();
-                }
             }
             else if (collision.gameObject.CompareTag("FallBox"))
             {
                 Debug.Log("Hit FallBox");
                 playerAnimation.Death();
+                AudioManager.instance.PlaySFX("Game Over");
                 rb.linearVelocity = Vector2.zero;
                 rb.bodyType = RigidbodyType2D.Kinematic;
                 rb.simulated = false;
@@ -274,30 +284,66 @@ namespace level3
                 rb.linearVelocity = Vector2.zero;
                 rb.bodyType = RigidbodyType2D.Kinematic;
                 rb.simulated = false;
+                AudioManager.instance.musicSource.Stop();
+                AudioManager.instance.PlaySFX("Level Completed");
                 gameManager.GameWin();
             }
         }
 
         private void Attack()
         {
+            if (Time.time - lastAttackTime < attackCooldown) return; // Prevent spam
+            lastAttackTime = Time.time; // Update attack time
             // Detect enemies within the attack range using OverlapCollider
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRadius, enemyLayer);
             foreach (Collider2D enemy in hitEnemies)
             {
-                Enemy enemyComponent = enemy.GetComponent<Enemy>();
-                if (enemyComponent != null)
+                if (enemy.gameObject.CompareTag("Boss"))
                 {
-                    Debug.Log("Hit enemy");
-                    enemyComponent.JumpedOn(); // Kill the enemy
-                    gameManager.AddScore(3);
+                    Vector2 attackDirection = (enemy.transform.position - transform.position).normalized;
+                    SkeletonController skeleton = enemy.GetComponent<SkeletonController>();
+                    if (skeleton != null)
+                        skeleton.TakeDamage(attackDamage, attackDirection);
+                }
+                else
+                {
+                    Enemy enemyComponent = enemy.GetComponent<Enemy>();
+                    if (enemyComponent != null)
+                    {
+                        Debug.Log("Hit enemy");
+                        enemyComponent.JumpedOn(); // Kill the enemy
+                        AudioManager.instance.PlaySFX("Monster Death");
+                        gameManager.AddScore(3);
+                    }
                 }
             }
         }
 
-        void TakeDamage(int damage)
+        public void TakeDamage(int damage, Vector2 attackDirection)
         {
+            if (currentHealth <= 0) return;
             currentHealth -= damage;
+            AudioManager.instance.PlaySFX("Hit");
             healthBar.SetHealth(currentHealth);
+            if (attackDirection != Vector2.zero)
+            {
+                rb.linearVelocity = Vector2.zero; // Stop current movement
+                rb.AddForce(attackDirection.normalized * hurtForce, ForceMode2D.Impulse); // Apply knockback
+            }
+            if (currentHealth > 0)
+            {
+                runMaxSpeed = 0f;
+                playerAnimation.Hurt();
+            }
+            else
+            {
+                playerAnimation.Death();
+                AudioManager.instance.PlaySFX("Game Over");
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.simulated = false;
+                gameManager.GameOver();
+            }
         }
 
         public bool IsGrounded()

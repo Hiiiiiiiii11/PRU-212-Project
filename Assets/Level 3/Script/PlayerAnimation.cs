@@ -45,7 +45,6 @@ namespace level3
         public void IdleAndRun()
         {
             animator.SetFloat(speed, Mathf.Abs(playerController.move.x));
-
             //Set Run Animation
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("RunIdleTrans"))
             {
@@ -78,7 +77,9 @@ namespace level3
             if (!isHurt)
             {
                 isHurt = true;
+                playerController.runMaxSpeed = 0; // Stop movement immediately
                 animator.SetTrigger(hurt);
+                playerController.move = Vector2.zero; // Ignore player movement input
             }
         }
 
@@ -89,6 +90,7 @@ namespace level3
             {
                 animator.SetTrigger(hurtEnded);
                 isHurt = false;
+                playerController.runMaxSpeed = playerController.originalRunMaxSpeed;
                 Debug.Log("Hurt animation ended, transitioning to idle.");
             }
         }
@@ -96,11 +98,6 @@ namespace level3
         public void Death()
         {
             animator.SetTrigger(death);
-            //if (animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
-            //{
-            //    if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-            //        animator.SetTrigger(deathEnded);
-            //}
         }
     }
 }

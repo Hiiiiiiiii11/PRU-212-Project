@@ -4,10 +4,26 @@ namespace level3
 {
     public class AudioManager : MonoBehaviour
     {
+        public static AudioManager instance;
         public Sound[] musicSounds, sfxSounds;
         public AudioSource musicSource, sfxSource;
 
-        public void PlayMusic()
+        private void Awake()
+        {
+            if(instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else Destroy(gameObject);
+        }
+
+        private void Start()
+        {
+            PlayMusic("Theme");
+        }
+
+        public void PlayMusic(string name)
         {
             Sound s = Array.Find(musicSounds, x => x.name == name);
             if (s == null)
@@ -26,6 +42,31 @@ namespace level3
                 Debug.Log("Sound Not Found");
             else
                 sfxSource.PlayOneShot(s.clip);
+        }
+
+        public void StopSFX()
+        {
+            sfxSource.Stop();
+        }
+
+        public void ToggleMusic()
+        {
+            musicSource.mute = !musicSource.mute;
+        }
+
+        public void ToggleSFX()
+        {
+            sfxSource.mute = !sfxSource.mute;
+        }
+
+        public void MusicVolume(float volume)
+        {
+            musicSource.volume = volume;
+        }
+
+        public void SFXVolume(float volume)
+        {
+            sfxSource.volume = volume;
         }
     }
 
