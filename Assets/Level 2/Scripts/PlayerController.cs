@@ -1,5 +1,4 @@
 using UnityEngine;
-
 namespace level2
 {
     public class PlayerController : MonoBehaviour
@@ -9,47 +8,57 @@ namespace level2
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private Transform groundCheck;
         private Animator animator;
-        private Rigidbody2D rb;
+
         private bool isGrounded;
+
+        private Rigidbody2D rb;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
         }
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
 
+        }
+
+        // Update is called once per frame
         void Update()
         {
             HandleMovement();
             HandleJump();
             UpdateAnimation();
         }
-
         private void HandleMovement()
         {
             float moveInput = Input.GetAxis("Horizontal");
+
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-            if (moveInput != 0)
-            {
-                transform.localScale = new Vector3(Mathf.Sign(moveInput) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
+            Vector3 currentScale = transform.localScale;
+
+            if (moveInput > 0 && currentScale.x < 0) transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
+
+            else if (moveInput < 0 && currentScale.x > 0) transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
         }
 
         private void HandleJump()
         {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-
-            if (isGrounded && Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         }
 
         private void UpdateAnimation()
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-            animator.SetBool("Grounded", isGrounded);
+            float isRunning = Mathf.Abs(rb.linearVelocity.x);
+            bool isJumping = !isGrounded;
+            animator.SetFloat("Speed", isRunning);
+            animator.SetBool("Grounded", !isJumping);
         }
     }
 }
