@@ -8,7 +8,9 @@ namespace level3
     public class GameManager : MonoBehaviour
     {
         private int score = 0;
+        private int key = 0;
         [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI keyText;
         [SerializeField] private GameObject gameOverUI;
         [SerializeField] private GameObject gameWinUI;
         [SerializeField] private float gameOverDelay = 1f;
@@ -38,6 +40,31 @@ namespace level3
             scoreText.text = $"SCORE: {score.ToString("D3")}";
         }
 
+        public void AddKey(int point)
+        {
+            key += point;
+            UpdateKey();
+        }
+
+        private void UpdateKey()
+        {
+            keyText.text = $"Key: {key}";
+        }
+
+        public bool HasKey()
+        {
+            return key > 0;
+        }
+
+        public void UseKey()
+        {
+            if (key > 0)
+            {
+                key--;
+                UpdateKey();
+            }
+        }
+
         public void GameOver()
         {
             isGameOver = true;
@@ -62,6 +89,16 @@ namespace level3
             UpdateScore();
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void NextLevel()
+        {
+            isGameOver = false;
+            isGameWin = false;
+            score = 0;
+            UpdateScore();
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Level 4");
         }
 
         public void MainMenu()

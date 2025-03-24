@@ -24,25 +24,25 @@ AnimationClip:
       value: {fileID: 21300000, guid: 590f2ee641e574d47aa92ce9ed58c564, type: 2}
     - time: 0.083333336
       value: {fileID: 21300000, guid: f495cbf104c1d1d4a83ed006cbf93769, type: 2}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: b5fd5e8ef6def3f4d9ad98765596c0a7, type: 2}
-    - time: 0.25
-      value: {fileID: 21300000, guid: ba11d2ee5db25bc49995d173b20e8c35, type: 2}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 76418460aae0f074e8a8ec3457e4a32c, type: 2}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: 8220248f4e095bb4db7b7ad8c93e486e, type: 2}
+      value: {fileID: 21300000, guid: b5fd5e8ef6def3f4d9ad98765596c0a7, type: 2}
     - time: 0.5
-      value: {fileID: 21300000, guid: c979decad5cba4746a1b088c2142b59c, type: 2}
-    - time: 0.5833333
-      value: {fileID: 21300000, guid: 85dd4b31bc035854f85efe7776e5a8b9, type: 2}
+      value: {fileID: 21300000, guid: ba11d2ee5db25bc49995d173b20e8c35, type: 2}
     - time: 0.6666667
-      value: {fileID: 21300000, guid: 7526435fe7d3e7e408fdcc05d3c31b49, type: 2}
+      value: {fileID: 21300000, guid: 76418460aae0f074e8a8ec3457e4a32c, type: 2}
     - time: 0.75
-      value: {fileID: 21300000, guid: 42f98653a410cbf45b0c390a7e2f9a2b, type: 2}
-    - time: 0.8333333
-      value: {fileID: 21300000, guid: f8d034ad52254fa4e82f75e621961b1e, type: 2}
+      value: {fileID: 21300000, guid: 8220248f4e095bb4db7b7ad8c93e486e, type: 2}
     - time: 0.9166667
+      value: {fileID: 21300000, guid: c979decad5cba4746a1b088c2142b59c, type: 2}
+    - time: 1
+      value: {fileID: 21300000, guid: 85dd4b31bc035854f85efe7776e5a8b9, type: 2}
+    - time: 1.1666666
+      value: {fileID: 21300000, guid: 7526435fe7d3e7e408fdcc05d3c31b49, type: 2}
+    - time: 1.3333334
+      value: {fileID: 21300000, guid: 42f98653a410cbf45b0c390a7e2f9a2b, type: 2}
+    - time: 1.5833334
+      value: {fileID: 21300000, guid: f8d034ad52254fa4e82f75e621961b1e, type: 2}
+    - time: 1.6666666
       value: {fileID: 21300000, guid: 27c893df3125d924187290c4e965af20, type: 2}
     attribute: m_Sprite
     path: 
@@ -83,7 +83,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -102,4 +102,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.6666667
+    functionName: EnragedAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

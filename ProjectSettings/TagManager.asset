@@ -19,6 +19,7 @@ TagManager:
   - EnemyHitBox
   - HealingItem
   - Boss
+  - SpawnBox
   layers:
   - Default
   - TransparentFX

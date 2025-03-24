@@ -8,7 +8,7 @@ namespace level3
         SkeletonController controller;
 
         public float speed = 5f;
-        public float attackRange = 5f;
+        public float attackRange = 3f;
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
