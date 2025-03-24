@@ -11,6 +11,7 @@ namespace level1
         [SerializeField] private AudioClip AttackSword1;
         [SerializeField] private AudioClip AttackSword2;
         [SerializeField] private AudioClip AttackSword3;
+        [SerializeField] private AudioClip AttackBoss;
         [SerializeField] private AudioClip Trap;
         [SerializeField] private AudioClip PlayerHurt;
         [SerializeField] private AudioClip MonsterBite;
@@ -20,6 +21,8 @@ namespace level1
         [SerializeField] private AudioClip TouchEnemy;
 
         [SerializeField] private AudioClip DeadSound;
+        [SerializeField] private AudioClip DeadSoundBoss;
+        [SerializeField] private AudioClip BossRoar;
         [SerializeField] private AudioClip Healing;
         [SerializeField] private AudioClip PickupClock;
         [SerializeField] private AudioClip EnterPortal;
@@ -98,6 +101,18 @@ namespace level1
         public void PlayEnterPortal()
         {
             effectAudioSource.PlayOneShot(EnterPortal);
+        }
+        public void PlayBossDead()
+        {
+            effectAudioSource.PlayOneShot(DeadSoundBoss);
+        }
+        public void PlayAttackBoss()
+        {
+            effectAudioSource.PlayOneShot(AttackBoss);
+        }
+        public void PlayBossRoar()
+        {
+            effectAudioSource.PlayOneShot(BossRoar);
         }
     }
 }

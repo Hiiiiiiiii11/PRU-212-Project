@@ -13,6 +13,7 @@ namespace level1
                 other.GetComponent<Goblin>()?.TakeDamage(damage);
                 other.GetComponent<Eyefly>()?.TakeDamage(damage);
                 other.GetComponent<Mushroom>()?.TakeDamage(damage);
+                other.GetComponent<Boss>()?.TakeDamage(damage);
             }
         }
     }
