@@ -77,7 +77,6 @@
     <Compile Include="Assets\Level 1\Scripts\Menu.cs" />
     <Compile Include="Assets\Level 3\Script\EagleUpController.cs" />
     <Compile Include="Assets\Level 1\Scripts\Skeleton.cs" />
-    <Compile Include="Assets\Level 2\Scripts\Portal.cs" />
     <Compile Include="Assets\Level 2\Scripts\ProjectileLauncher.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HorizontalLineAttribute.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowIfAttribute.cs" />
@@ -121,7 +120,6 @@
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TabGroupAttribute.cs" />
     <Compile Include="Assets\Level 4\Scripts\FlightEyeController.cs" />
     <Compile Include="Assets\Ethan the Hero\Script\PlayerAnimation.cs" />
-    <Compile Include="Assets\Level 2\Scripts\ParallaxEffect.cs" />
     <Compile Include="Assets\Level 5\Script\DetectionZone.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\SectionHeaderAttribute.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\PropertyGroupAttribute.cs" />
