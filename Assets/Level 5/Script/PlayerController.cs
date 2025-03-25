@@ -1,14 +1,20 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 namespace level5
 {
     [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
+
     public class PlayerController : MonoBehaviour
     {
         public float walkSpeed = 5f;
         public float jumpImpulse = 10f;
         public float airMoveSpeed = 3f;
+        public float dashSpeed = 15f;
+        public float dashDuration = 0.2f;
+        private bool isDashing = false;
+        private bool canDash = true;
         Vector2 moveInput;
         TouchingDirection touchingDirection;
         Damageable damageable;
@@ -16,6 +22,7 @@ namespace level5
         {
             get
             {
+                if (isDashing) return dashSpeed;
                 if (canMove)
                 {
                     if (IsMoving && !touchingDirection.IsOnWall)
@@ -110,7 +117,7 @@ namespace level5
 
         private void FixedUpdate()
         {
-            if (!damageable.LockVelocity)
+            if (!damageable.LockVelocity && !isDashing)
                 rb.linearVelocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.linearVelocity.y);
 
             animator.SetFloat(AnimationStrings.yVelocity, rb.linearVelocity.y);
@@ -128,6 +135,33 @@ namespace level5
             {
                 IsMoving = false;
             }
+        }
+
+        public void OnDash(InputAction.CallbackContext context)
+        {
+            if (context.started && canDash)
+            {
+                StartCoroutine(Dash());
+            }
+        }
+
+        private IEnumerator Dash()
+        {
+            canDash = false;
+            isDashing = true;
+            rb.gravityScale = 0;
+            animator.SetTrigger(AnimationStrings.dash);
+
+            float dashDirection = IsFacingRight ? 1 : -1;
+            rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0);
+
+            yield return new WaitForSeconds(dashDuration);
+
+            rb.gravityScale = 1;
+            isDashing = false;
+
+            yield return new WaitForSeconds(2f);
+            canDash = true;
         }
 
         private void SetFacingDirection(Vector2 moveInput)

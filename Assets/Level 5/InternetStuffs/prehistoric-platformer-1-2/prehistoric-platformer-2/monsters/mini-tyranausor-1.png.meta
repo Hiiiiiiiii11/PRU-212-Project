@@ -176,20 +176,20 @@ TextureImporter:
       name: mini-tyranausor-1_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 185
-        width: 60
-        height: 49
+        x: 0
+        y: 186
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 004801bc09b1d75b0800000000000000
-      internalID: -5369104872059665408
+      spriteID: 84f089dc6d94853448026499970472d0
+      internalID: 1332107267
       vertices: []
       indices: 
       edges: []
@@ -198,20 +198,20 @@ TextureImporter:
       name: mini-tyranausor-1_1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 185
-        width: 60
-        height: 48
+        x: 80
+        y: 186
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 821803bcd9f0c0540800000000000000
-      internalID: 4975368858730791208
+      spriteID: 8150c0fe93f155c4b80e01172e58a809
+      internalID: -74870100
       vertices: []
       indices: 
       edges: []
@@ -220,20 +220,20 @@ TextureImporter:
       name: mini-tyranausor-1_2
       rect:
         serializedVersion: 2
-        x: 169
-        y: 185
-        width: 60
-        height: 47
+        x: 160
+        y: 186
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3e46feee9e4869d50800000000000000
-      internalID: 6743723632304809187
+      spriteID: 7d9d5a867988f914d82fd0ae4685b252
+      internalID: 2116099753
       vertices: []
       indices: 
       edges: []
@@ -242,20 +242,20 @@ TextureImporter:
       name: mini-tyranausor-1_3
       rect:
         serializedVersion: 2
-        x: 249
-        y: 185
-        width: 60
-        height: 46
+        x: 240
+        y: 186
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4dd284252b00f19d0800000000000000
-      internalID: -2801519677316518444
+      spriteID: 56bc94c58f0b09e42b69b7359360396c
+      internalID: 868174066
       vertices: []
       indices: 
       edges: []
@@ -264,20 +264,20 @@ TextureImporter:
       name: mini-tyranausor-1_4
       rect:
         serializedVersion: 2
-        x: 329
-        y: 185
-        width: 60
-        height: 47
+        x: 320
+        y: 186
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eefd4ff24208a45c0800000000000000
-      internalID: -4230428007049404434
+      spriteID: 69c6fbaee8da8c8439b9f9b881bdd57d
+      internalID: -186704129
       vertices: []
       indices: 
       edges: []
@@ -286,20 +286,20 @@ TextureImporter:
       name: mini-tyranausor-1_5
       rect:
         serializedVersion: 2
-        x: 409
-        y: 185
-        width: 60
-        height: 49
+        x: 400
+        y: 186
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eef061b03d0836e70800000000000000
-      internalID: 9107264515385724910
+      spriteID: 74064e510b96f884891353fcc3c5731d
+      internalID: 673747191
       vertices: []
       indices: 
       edges: []
@@ -308,20 +308,20 @@ TextureImporter:
       name: mini-tyranausor-1_6
       rect:
         serializedVersion: 2
-        x: 9
-        y: 123
-        width: 60
-        height: 52
+        x: 0
+        y: 124
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 60075e5488cd22800800000000000000
-      internalID: 586273379357913094
+      spriteID: 7771f251b6a096d4dbb2fa5508ce9014
+      internalID: 1328929081
       vertices: []
       indices: 
       edges: []
@@ -330,20 +330,20 @@ TextureImporter:
       name: mini-tyranausor-1_7
       rect:
         serializedVersion: 2
-        x: 89
-        y: 123
-        width: 60
-        height: 52
+        x: 80
+        y: 124
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9681631d63b5c6680800000000000000
-      internalID: -8760526884146112407
+      spriteID: 921380cdde4718143b7f4ee2fd6ef906
+      internalID: -1871250192
       vertices: []
       indices: 
       edges: []
@@ -352,20 +352,20 @@ TextureImporter:
       name: mini-tyranausor-1_8
       rect:
         serializedVersion: 2
-        x: 163
-        y: 61
-        width: 46
-        height: 63
+        x: 160
+        y: 124
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1f6f231c5f43b5910800000000000000
-      internalID: 1827112303941842673
+      spriteID: dcea9b4ded5639547a7a4a1bfd476dff
+      internalID: 2140120355
       vertices: []
       indices: 
       edges: []
@@ -374,20 +374,20 @@ TextureImporter:
       name: mini-tyranausor-1_9
       rect:
         serializedVersion: 2
-        x: 169
-        y: 123
-        width: 60
-        height: 49
+        x: 240
+        y: 124
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: afe146294da652660800000000000000
-      internalID: 7360406627228589818
+      spriteID: de14cb0e89c8a2749a28e148d28e4860
+      internalID: -486831543
       vertices: []
       indices: 
       edges: []
@@ -396,20 +396,20 @@ TextureImporter:
       name: mini-tyranausor-1_10
       rect:
         serializedVersion: 2
-        x: 243
-        y: 61
-        width: 66
-        height: 114
+        x: 320
+        y: 124
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dca246067c9b59150800000000000000
-      internalID: 5878809154568858317
+      spriteID: 2f7a95f07ab6b1a43b11cfb998601989
+      internalID: 1490992251
       vertices: []
       indices: 
       edges: []
@@ -418,20 +418,20 @@ TextureImporter:
       name: mini-tyranausor-1_11
       rect:
         serializedVersion: 2
-        x: 330
-        y: 123
-        width: 60
-        height: 52
+        x: 400
+        y: 124
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d136bb80c5e5b2d30800000000000000
-      internalID: 4407720409688662813
+      spriteID: 033b0c0d5cedda84ca985b9eeb2d0ee1
+      internalID: -729197497
       vertices: []
       indices: 
       edges: []
@@ -440,20 +440,20 @@ TextureImporter:
       name: mini-tyranausor-1_12
       rect:
         serializedVersion: 2
-        x: 399
-        y: 123
-        width: 46
-        height: 54
+        x: 0
+        y: 62
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6d03006af513ab570800000000000000
-      internalID: 8483147134982435030
+      spriteID: a92a459edffe3594887674ceb9db63cb
+      internalID: -1509956492
       vertices: []
       indices: 
       edges: []
@@ -462,20 +462,20 @@ TextureImporter:
       name: mini-tyranausor-1_13
       rect:
         serializedVersion: 2
-        x: 15
-        y: 61
-        width: 64
-        height: 44
+        x: 80
+        y: 62
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2bbd1089a4683d500800000000000000
-      internalID: 419826845211548594
+      spriteID: 4fc33a23f04dbde4295a5533d42c9012
+      internalID: -971185772
       vertices: []
       indices: 
       edges: []
@@ -484,20 +484,20 @@ TextureImporter:
       name: mini-tyranausor-1_14
       rect:
         serializedVersion: 2
-        x: 96
-        y: 61
-        width: 65
-        height: 41
+        x: 160
+        y: 62
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a3e07f8e650811c20800000000000000
-      internalID: 3175460323036958266
+      spriteID: 48bae9d51af110f4a98ecc85f9b7f5f6
+      internalID: -663566704
       vertices: []
       indices: 
       edges: []
@@ -506,20 +506,20 @@ TextureImporter:
       name: mini-tyranausor-1_15
       rect:
         serializedVersion: 2
-        x: 327
-        y: 61
-        width: 45
-        height: 57
+        x: 240
+        y: 62
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1f95b91d188f30820800000000000000
-      internalID: 2883421422898338289
+      spriteID: 6702acb0c5e6e4d4cb4f476b4aab8c9b
+      internalID: 505344106
       vertices: []
       indices: 
       edges: []
@@ -528,20 +528,20 @@ TextureImporter:
       name: mini-tyranausor-1_16
       rect:
         serializedVersion: 2
-        x: 407
+        x: 320
         y: 62
-        width: 45
-        height: 57
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 214d9e5c772e8f7b0800000000000000
-      internalID: -5190149566495075310
+      spriteID: 4da86190a54f7184e9d017f484b600db
+      internalID: 561636080
       vertices: []
       indices: 
       edges: []
@@ -550,20 +550,20 @@ TextureImporter:
       name: mini-tyranausor-1_17
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 46
-        height: 55
+        x: 400
+        y: 62
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2b34633b8e3782970800000000000000
-      internalID: 8730355320933991346
+      spriteID: 0d30fe7e99a0c2a45a68ccd5aa634b28
+      internalID: 292475066
       vertices: []
       indices: 
       edges: []
@@ -572,20 +572,20 @@ TextureImporter:
       name: mini-tyranausor-1_18
       rect:
         serializedVersion: 2
-        x: 88
+        x: 0
         y: 0
-        width: 48
-        height: 52
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e52483e2d7e2f8c50800000000000000
-      internalID: 6669600688340222558
+      spriteID: cf9a147dd1ac9314fbfeb3064f711004
+      internalID: 1713612494
       vertices: []
       indices: 
       edges: []
@@ -594,20 +594,20 @@ TextureImporter:
       name: mini-tyranausor-1_19
       rect:
         serializedVersion: 2
-        x: 168
+        x: 80
         y: 0
-        width: 63
-        height: 28
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20609fc1be79ee570800000000000000
-      internalID: 8497896582953895426
+      spriteID: e25b925ec8977b144ba8e0846737eade
+      internalID: -1015930600
       vertices: []
       indices: 
       edges: []
@@ -616,20 +616,42 @@ TextureImporter:
       name: mini-tyranausor-1_20
       rect:
         serializedVersion: 2
-        x: 245
+        x: 160
         y: 0
-        width: 70
-        height: 23
+        width: 80
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8187adc57323f510800000000000000
-      internalID: 1581646883005628815
+      spriteID: f4a85ec9734afc846ade61cdd0882c67
+      internalID: 1917307799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini-tyranausor-1_21
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e53668283ff2d48972b06d92885d8d
+      internalID: 1549473575
       vertices: []
       indices: 
       edges: []
@@ -638,7 +660,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7343528ae4b56b7469081d72ce667bb6
     internalID: 0
     vertices: []
     indices: 
@@ -648,27 +670,28 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mini-tyranausor-1_0: -5369104872059665408
-      mini-tyranausor-1_1: 4975368858730791208
-      mini-tyranausor-1_10: 5878809154568858317
-      mini-tyranausor-1_11: 4407720409688662813
-      mini-tyranausor-1_12: 8483147134982435030
-      mini-tyranausor-1_13: 419826845211548594
-      mini-tyranausor-1_14: 3175460323036958266
-      mini-tyranausor-1_15: 2883421422898338289
-      mini-tyranausor-1_16: -5190149566495075310
-      mini-tyranausor-1_17: 8730355320933991346
-      mini-tyranausor-1_18: 6669600688340222558
-      mini-tyranausor-1_19: 8497896582953895426
-      mini-tyranausor-1_2: 6743723632304809187
-      mini-tyranausor-1_20: 1581646883005628815
-      mini-tyranausor-1_3: -2801519677316518444
-      mini-tyranausor-1_4: -4230428007049404434
-      mini-tyranausor-1_5: 9107264515385724910
-      mini-tyranausor-1_6: 586273379357913094
-      mini-tyranausor-1_7: -8760526884146112407
-      mini-tyranausor-1_8: 1827112303941842673
-      mini-tyranausor-1_9: 7360406627228589818
+      mini-tyranausor-1_0: 1332107267
+      mini-tyranausor-1_1: -74870100
+      mini-tyranausor-1_10: 1490992251
+      mini-tyranausor-1_11: -729197497
+      mini-tyranausor-1_12: -1509956492
+      mini-tyranausor-1_13: -971185772
+      mini-tyranausor-1_14: -663566704
+      mini-tyranausor-1_15: 505344106
+      mini-tyranausor-1_16: 561636080
+      mini-tyranausor-1_17: 292475066
+      mini-tyranausor-1_18: 1713612494
+      mini-tyranausor-1_19: -1015930600
+      mini-tyranausor-1_2: 2116099753
+      mini-tyranausor-1_20: 1917307799
+      mini-tyranausor-1_21: 1549473575
+      mini-tyranausor-1_3: 868174066
+      mini-tyranausor-1_4: -186704129
+      mini-tyranausor-1_5: 673747191
+      mini-tyranausor-1_6: 1328929081
+      mini-tyranausor-1_7: -1871250192
+      mini-tyranausor-1_8: 2140120355
+      mini-tyranausor-1_9: -486831543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

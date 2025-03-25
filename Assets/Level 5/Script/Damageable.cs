@@ -6,6 +6,8 @@ namespace level5
     public class Damageable : MonoBehaviour
     {
         public UnityEvent<int, Vector2> damagableHit;
+        public UnityEvent<int, int> healthChanged;
+
         Animator animator;
         [SerializeField]
         private int _maxHealth = 100;
@@ -34,6 +36,7 @@ namespace level5
             set
             {
                 _health = value;
+                //healthChanged?.Invoke(_health, MaxHealth);
                 if (_health <= 0)
                 {
                     IsAlive = false;
@@ -102,6 +105,22 @@ namespace level5
                 animator.SetTrigger(AnimationStrings.hitTrigger);
                 LockVelocity = true;
                 damagableHit?.Invoke(damage, knockback);
+                healthChanged?.Invoke(Health, MaxHealth);
+                CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+                return true;
+            }
+            return false;
+        }
+
+        public bool Heal(int healthRestored)
+        {
+            if (IsAlive && Health < MaxHealth)
+            {
+                int maxHeal = Mathf.Max(MaxHealth - Health, 0);
+                int actualHeal = Mathf.Min(maxHeal, healthRestored);
+                Health += actualHeal;
+                healthChanged?.Invoke(Health, MaxHealth);
+                CharacterEvents.characterHealed(gameObject, actualHeal);
                 return true;
             }
             return false;
