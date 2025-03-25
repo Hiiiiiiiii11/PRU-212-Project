@@ -5,7 +5,8 @@ namespace level5
     [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
     public class Rexy : MonoBehaviour
     {
-        public float walkSpeed = 3f;
+        public float walkAcceleration = 3f;
+        public float maxSpeed = 3f;
         public float walkStopRate = 0.1f;
         public DetectionZone attackZone;
         public DetectionZone cliffDetectionZone;
@@ -90,7 +91,10 @@ namespace level5
             if (!damageable.LockVelocity)
             {
                 if (CanMove)
-                    rb.linearVelocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.linearVelocity.y);
+
+                    rb.linearVelocity = new Vector2(
+                        Mathf.Clamp(rb.linearVelocity.x + (walkAcceleration * walkDirectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed),
+                        rb.linearVelocity.y);
                 else
                     rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0, walkStopRate), rb.linearVelocity.y);
             }
