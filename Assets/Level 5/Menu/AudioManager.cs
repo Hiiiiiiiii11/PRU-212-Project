@@ -1,74 +1,76 @@
 using System;
 using UnityEngine;
-
-public class AudioManager : MonoBehaviour
+namespace level5
 {
-    public static AudioManager Instance;
-    public Sound[] musicSound, sfxSound;
-    public AudioSource musicSource, sfxSource;
-
-    private void Awake()
+    public class AudioManager : MonoBehaviour
     {
-        if (Instance == null)
+        public static AudioManager Instance;
+        public Sound[] musicSound, sfxSound;
+        public AudioSource musicSource, sfxSource;
+
+        private void Awake()
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+
+        private void Start()
         {
-            Destroy(gameObject);
+            PlayMusic("Theme");
         }
-    }
 
-    private void Start()
-    {
-        PlayMusic("Theme");
-    }
-
-    public void PlayMusic(string name)
-    {
-        Sound s = Array.Find(musicSound, x => x.name == name);
-        if (s == null)
+        public void PlayMusic(string name)
         {
-            Debug.Log("Sound not found");
+            Sound s = Array.Find(musicSound, x => x.name == name);
+            if (s == null)
+            {
+                Debug.Log("Sound not found");
+            }
+            else
+            {
+                musicSource.clip = s.clip;
+                musicSource.Play();
+            }
         }
-        else
+
+        public void PlaySFX(string name)
         {
-            musicSource.clip = s.clip;
-            musicSource.Play();
+            Sound s = Array.Find(sfxSound, x => x.name == name);
+            if (s == null)
+            {
+                Debug.Log("Sound not found");
+            }
+            else
+            {
+                sfxSource.PlayOneShot(s.clip);
+            }
         }
-    }
 
-    public void PlaySFX(string name)
-    {
-        Sound s = Array.Find(sfxSound, x => x.name == name);
-        if (s == null)
+        public void ToggleMusic()
         {
-            Debug.Log("Sound not found");
+            musicSource.mute = !musicSource.mute;
         }
-        else
+
+        public void ToggleSFX()
         {
-            sfxSource.PlayOneShot(s.clip);
+            sfxSource.mute = !sfxSource.mute;
         }
-    }
 
-    public void ToggleMusic()
-    {
-        musicSource.mute = !musicSource.mute;
-    }
+        public void MusicVolume(float volume)
+        {
+            musicSource.volume = volume;
+        }
 
-    public void ToggleSFX()
-    {
-        sfxSource.mute = !sfxSource.mute;
-    }
-
-    public void MusicVolume(float volume)
-    {
-        musicSource.volume = volume;
-    }
-
-    public void SFXVolume(float volume)
-    {
-        sfxSource.volume = volume;
+        public void SFXVolume(float volume)
+        {
+            sfxSource.volume = volume;
+        }
     }
 }

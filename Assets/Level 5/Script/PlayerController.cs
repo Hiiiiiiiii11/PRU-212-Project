@@ -197,5 +197,28 @@ namespace level5
         {
             rb.linearVelocity = new Vector2(knockback.x, rb.linearVelocity.y + knockback.y);
         }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log($"Collided with: {collision.gameObject.name}");
+
+            if (collision.gameObject.CompareTag("FallBox"))
+            {
+                Debug.Log("Hit FallBox");
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.simulated = false;
+                damageable.Health = 0;
+                //gameManager.GameOver();
+            }
+            else if (collision.gameObject.CompareTag("WinBox"))
+            {
+                Debug.Log("Hit WinBox");
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.simulated = false;
+                //gameManager.GameWin();
+            }
+        }
     }
 }
