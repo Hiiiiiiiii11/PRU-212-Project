@@ -7,8 +7,8 @@ namespace level1
 
         [Header("Di chuyển")]
         public float walkSpeed = 4f;
-        public float leftDistance = 10f;
-        public float rightDistance = 3f;
+        public float leftDistance = 15f;
+        public float rightDistance = 10f;
 
         [Header("Ground Check")]
         public Transform groundCheckEnemy;
@@ -182,9 +182,10 @@ namespace level1
             if (!isEnraged && currentHealth <= startingHealth * 0.5f)
             {
                 isEnraged = true;
-                attackDamage = 2f;
-                walkSpeed = 8f; // Increase boss damage by 1
-                BossRoar();         // Play boss roar audio to signal enrage
+                attackDamage = 1f;
+                walkSpeed = 20f; // Increase boss damage by 1
+                BossRoar();
+                // Play boss roar audio to signal enrage
             }
 
             if (currentHealth > 0)
@@ -232,12 +233,12 @@ namespace level1
         {
             if (player == null) return;
             float distance = Vector2.Distance(transform.position, player.position);
-            if (distance <= 30f && !bossFight)
+            if (distance <= 10f && !bossFight)
             {
                 bossFight = true;
                 BossRoar();
             }
-            else if (distance > 30f)
+            else if (distance > 50f)
             {
                 bossFight = false;
             }
