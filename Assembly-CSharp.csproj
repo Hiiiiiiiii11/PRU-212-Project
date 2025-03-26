@@ -161,6 +161,7 @@
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableIfAttribute.cs" />
     <Compile Include="Assets\Level 1\Scripts\PlayerHitBox.cs" />
     <Compile Include="Assets\Level 4\Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\Level 1\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Level 5\Script\Attack.cs" />
     <Compile Include="Assets\Level 1\Scripts\Trap.cs" />
     <Compile Include="Assets\Level 5\Script\Boss.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ButtonAttribute.cs" />
     <Compile Include="Assets\Level 2\Scripts\GameManager.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TitleHeaderAttribute.cs" />
+    <Compile Include="Assets\Level 2\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GroupAttribute.cs" />
     <Compile Include="Assets\Level 5\Script\StateMachine\SetFloatBehaviour.cs" />
     <Compile Include="Assets\Level 2\Cainos\Third Party\Lucid Editor\Runtime\Enum.cs" />

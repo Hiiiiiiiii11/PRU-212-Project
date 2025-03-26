@@ -160,7 +160,7 @@ namespace level5
             rb.gravityScale = 1;
             isDashing = false;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             canDash = true;
         }
 
