@@ -17,6 +17,7 @@ namespace level5
         Animator animator;
         Damageable bossdamageable;
         private bool isAggro = false; // Boss starts stationary
+        [SerializeField] private GameObject portal;
 
         public enum WalkableDirection { Right, Left }
         private WalkableDirection _walkDirection = WalkableDirection.Left;
@@ -94,6 +95,9 @@ namespace level5
             {
                 AttackCooldown -= Time.deltaTime;
             }
+
+            if (bossdamageable.Health <= 0)
+                portal.SetActive(true);
         }
 
         private void FixedUpdate()

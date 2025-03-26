@@ -96,6 +96,7 @@ namespace level5
 
         Rigidbody2D rb;
         Animator animator;
+        [HideInInspector] public UIManager uiManager;
 
         private void Awake()
         {
@@ -103,6 +104,7 @@ namespace level5
             animator = GetComponent<Animator>();
             touchingDirection = GetComponent<TouchingDirection>();
             damageable = GetComponent<Damageable>();
+            uiManager = FindFirstObjectByType<UIManager>();
         }
 
         void Start()
@@ -209,7 +211,7 @@ namespace level5
                 rb.bodyType = RigidbodyType2D.Kinematic;
                 rb.simulated = false;
                 damageable.Health = 0;
-                //gameManager.GameOver();
+                uiManager.GameOver();
             }
             else if (collision.gameObject.CompareTag("WinBox"))
             {
@@ -217,7 +219,7 @@ namespace level5
                 rb.linearVelocity = Vector2.zero;
                 rb.bodyType = RigidbodyType2D.Kinematic;
                 rb.simulated = false;
-                //gameManager.GameWin();
+                uiManager.GameWin();
             }
         }
     }
