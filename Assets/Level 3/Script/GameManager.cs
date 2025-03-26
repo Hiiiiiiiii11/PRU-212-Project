@@ -9,6 +9,7 @@ namespace level3
     {
         private int score = 0;
         private int key = 0;
+        [SerializeField] private TextMeshProUGUI healthText;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private TextMeshProUGUI keyText;
         [SerializeField] private GameObject gameOverUI;
@@ -27,6 +28,11 @@ namespace level3
         void Update()
         {
 
+        }
+
+        public void UpdateHealth(int health)
+        {
+            healthText.text = $"Health: {health}/100";
         }
 
         public void AddScore(int point)

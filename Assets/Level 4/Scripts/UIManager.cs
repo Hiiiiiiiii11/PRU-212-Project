@@ -97,15 +97,28 @@ namespace level4
 			chest.SetActive(true);
 		}
 
-		public void RestartGame()
-		{
-			isGameOver = false;
-			isGameWin = false;
-			Time.timeScale = 1;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
+        public void RestartGame()
+        {
+            isGameOver = false;
+            isGameWin = false;
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
-		public void QuitGame()
+        public void NextLevel()
+        {
+            isGameOver = false;
+            isGameWin = false;
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Level 5");
+        }
+
+        public void MainMenu()
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+
+        public void QuitGame()
 		{
 			Application.Quit();
 		}

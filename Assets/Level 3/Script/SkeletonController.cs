@@ -1,5 +1,8 @@
+using level1;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+
 namespace level3
 {
     public class SkeletonController : MonoBehaviour
@@ -22,15 +25,18 @@ namespace level3
         [Header("Health")]
         public HealthBar healthBar;
         [SerializeField] public int maxHealth = 300;
-        [SerializeField]  public int currentHealth;
+        [SerializeField] public int currentHealth;
         [SerializeField] float knockbackForce = 3f;
         [SerializeField] public float hurtForce = 10f;
+
+        [Header("Damage Text")]
+        [SerializeField] private TextMeshProUGUI healthText;
 
         private void Start()
         {
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
-            if (player == null) // Assign only if it's not set
+            if (player == null)
             {
                 GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
                 if (playerObject != null)
@@ -40,7 +46,6 @@ namespace level3
             }
         }
 
-
         void Awake()
         {
             animator = GetComponent<Animator>();
@@ -48,7 +53,12 @@ namespace level3
             gameManager = FindFirstObjectByType<GameManager>();
             playerController = FindFirstObjectByType<PlayerController>();
             spawnBox = FindFirstObjectByType<SpawnBox>();
+            if (healthText == null)
+            {
+                healthText = GetComponentInChildren<TextMeshProUGUI>();
+            }
         }
+
         public void LookAtPlayer()
         {
             Vector3 flipped = transform.localScale;
@@ -65,6 +75,12 @@ namespace level3
                 transform.localScale = flipped;
                 transform.Rotate(0f, 180f, 0f);
                 isFlipped = true;
+            }
+            if (healthText != null)
+            {
+                Vector3 textScale = healthText.transform.localScale;
+                textScale.x = isFlipped ? -Mathf.Abs(textScale.x) : Mathf.Abs(textScale.x);
+                healthText.transform.localScale = textScale;
             }
         }
 
@@ -92,9 +108,9 @@ namespace level3
 
         public void TakeDamage(int damage, Vector2 attackDirection)
         {
-            if (currentHealth < 0) return;
+            if (currentHealth <= 0) return;
             currentHealth -= damage;
-            Debug.Log($"Skeleton Health: {currentHealth}");
+            UpdateHealth(currentHealth);
             healthBar.SetHealth(currentHealth);
             if (currentHealth <= 120)
             {
@@ -110,8 +126,13 @@ namespace level3
                 spawnBox.SpawnKey();
                 gameManager.AddScore(10);
             }
-            else            
-                rb.AddForce(attackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+            else
+                rb.AddForce(attackDirection.normalized * knockbackForce, ForceMode2D.Impulse);           
+        }
+
+        public void UpdateHealth(int health)
+        {
+            healthText.text = $"Health: {health}/300";
         }
 
         public void Death()

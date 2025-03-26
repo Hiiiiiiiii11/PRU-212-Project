@@ -96,6 +96,7 @@ namespace level5
 
         Rigidbody2D rb;
         Animator animator;
+        [HideInInspector] public UIManager uiManager;
 
         private void Awake()
         {
@@ -103,6 +104,7 @@ namespace level5
             animator = GetComponent<Animator>();
             touchingDirection = GetComponent<TouchingDirection>();
             damageable = GetComponent<Damageable>();
+            uiManager = FindFirstObjectByType<UIManager>();
         }
 
         void Start()
@@ -160,7 +162,7 @@ namespace level5
             rb.gravityScale = 1;
             isDashing = false;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             canDash = true;
         }
 
@@ -196,6 +198,29 @@ namespace level5
         public void OnHit(int damage, Vector2 knockback)
         {
             rb.linearVelocity = new Vector2(knockback.x, rb.linearVelocity.y + knockback.y);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log($"Collided with: {collision.gameObject.name}");
+
+            if (collision.gameObject.CompareTag("FallBox"))
+            {
+                Debug.Log("Hit FallBox");
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.simulated = false;
+                damageable.Health = 0;
+                uiManager.GameOver();
+            }
+            else if (collision.gameObject.CompareTag("WinBox"))
+            {
+                Debug.Log("Hit WinBox");
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.simulated = false;
+                uiManager.GameWin();
+            }
         }
     }
 }

@@ -91,6 +91,7 @@ namespace level3
 
         private void Start()
         {
+            gameManager.UpdateHealth(maxHealth);
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
         }
@@ -323,6 +324,7 @@ namespace level3
         {
             if (currentHealth <= 0) return;
             currentHealth -= damage;
+            gameManager.UpdateHealth(currentHealth);
             AudioManager.instance.PlaySFX("Hit");
             healthBar.SetHealth(currentHealth);
             if (attackDirection != Vector2.zero)

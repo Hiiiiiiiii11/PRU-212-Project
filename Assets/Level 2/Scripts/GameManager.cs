@@ -55,7 +55,7 @@ namespace level2
         }
         public void UpdateScore()
         {
-            scoreText.text = "Keys: " + keys.ToString() + "\n" + "Crytals: " + crystal.ToString();
+            scoreText.text = "Keys: " + keys.ToString() + "\n" + "Fragment: " + crystal.ToString();
         }
 
         public void GameOver()

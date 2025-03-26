@@ -1,8 +1,10 @@
 using UnityEngine;
-
-[System.Serializable]
-public class Sound
+namespace level5
 {
-    public string name;
-    public AudioClip clip;
+    [System.Serializable]
+    public class Sound
+    {
+        public string name;
+        public AudioClip clip;
+    }
 }
