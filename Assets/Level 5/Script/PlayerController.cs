@@ -114,7 +114,8 @@ namespace level5
 
         void Update()
         {
-
+            if (damageable.Health <= 0)
+                uiManager.GameOver();
         }
 
         private void FixedUpdate()
