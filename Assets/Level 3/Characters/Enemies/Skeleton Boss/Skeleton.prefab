@@ -681,7 +681,7 @@ MonoBehaviour:
     m_Bits: 256
   healthBar: {fileID: 2206613266344445766}
   maxHealth: 300
-  currentHealth: 0
+  currentHealth: 300
   knockbackForce: 3
   hurtForce: 10
   healthText: {fileID: 0}
